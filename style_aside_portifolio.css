@@ -1,0 +1,570 @@
+.linguagens2 {
+    width: 45vw;
+    height: 30px;
+    margin-top: 30px;
+}
+.aside-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 1px 7px;
+    color: #FFF;
+    background-color: #F20000;
+    border: 1px solid #F20000;
+    font-size: 14px;
+    cursor: pointer;
+}
+.linguagens2 ul {
+    width: 45vw;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+aside .linguagens--conteudo {
+    margin-top: 69px;
+}
+.linguagens2 ul li {
+    width: 25%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #FFF;
+    /* border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid #5427;; */
+    /* border: 3px solid #542721; */
+}
+.linguagens2 ul li:first-child{
+    border-top-left-radius: 15px;
+    /* border-bottom-left-radius: 17px; */
+}
+.linguagens2 ul li:last-child{
+    border-top-right-radius: 15px;
+    /* border-bottom-right-radius: 17px; */
+    /* border-right: 3px solid #5427; */
+}
+.html2 {
+    background-color: #F4470B;
+
+}
+.divs_html2 {
+    background-color: #f4450b4b;
+}
+.css2 {
+    background-color: #254BDD;
+}
+.divs_css2 {
+    background-color: #254add5d;
+    
+}
+.javascript2 {
+    background-color: #ECCC33;
+}
+.divs_javascript2 {
+    background-color: #eccd335e;
+    
+}
+.php2 {
+    background-color:#5E7DB0 ;
+}
+.divs_php2 {
+    background-color:#5e7db063 ;
+    
+}
+
+.div_apagar2 {
+   background: transparent;
+}
+.divs_orientadoras2 {
+    width: 45vw;
+    height: 30px;
+    display: flex;
+}
+.divs_html2,
+.divs_css2,
+.divs_javascript2,
+.divs_php2 {
+    width: 25%;
+    height: 30px;
+}
+.linguagens--conteudo2 {
+    width: 45vw;
+    height: 340px;
+    background-color: #f4450b4b;
+    margin-top: 69px;
+    border-radius: 35px;
+    border-top-left-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.linguagens--conteudo--1-2,
+.linguagens--conteudo--2-2,
+.linguagens--conteudo--3-2,
+.linguagens--conteudo--4-2 {
+    width: 45vw;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-wrap: wrap;
+}
+
+.conteudo--1--html,
+.conteudo--1--css,
+.conteudo--1--javascript,
+.conteudo--1--php {
+    width: 20vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.conteudo--1--html a,
+.conteudo--1--css a,
+.conteudo--1--javascript a,
+.conteudo--1--php a {
+    border-bottom: none;
+} 
+.image {
+    width: 8vw;
+    height: 100px;
+    border: 1px solid #000;
+}
+.html1--content,
+.css1--content,
+.javascript--content,
+.php--content {
+    width: 10vw;
+    height: 150px;
+    margin-left: 15px;
+}
+.html1--content h5,
+.css1--content h5,
+.javascript--content h5,
+.php--content h5 {
+    margin-top: 8px;
+}
+.javascript--content h5 {
+    font-size: 11px;
+}
+.html1--content p,
+.css1--content p,
+.javascript--content p,
+.php--content p {
+    margin-top: 9px;
+    font-size: 14px;
+}
+.html1--content a,
+.css1--content a,
+.javascript--content a,
+.php--content a {
+    font-size: 12px;
+}
+
+@media (max-width: 790px) {
+    ul li a, .contato {
+        font-size: 16px;
+    }
+    .header img {
+        width: 150px;
+    }
+    label {
+        font-size: 14px;
+    }
+    .banner h1 {
+        font-size: 20px;
+    }
+    .banner--area--content img {
+        width: 125px;
+        height: 90px;
+    }
+    .banner--area--content p {
+        font-size: 15px;
+        max-width: 200px;
+    }
+    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
+        font-size: 11px;
+    }
+    .html1--content p, .css1--content p, .javascript--content p, .php--content p {
+        font-size: 12px;
+    }
+    .linguagens ul li, .linguagens2 ul, li {
+        font-size: 11px;
+    }
+    footer {
+        right: 10px;
+    }
+    .atendimento {
+        display: none;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        margin-top: 325px;
+    }
+}
+
+@media (max-width: 700px) {
+    .banner--area--content img {
+        width: 150px;
+        height: 100px;
+    }
+    
+    .inputs--area1 {
+        width: 21vw;
+    }
+    .banner--area--content p {
+        font-size: 14px;
+        max-width: 150px;
+    }
+    .linguagens--conteudo--1-2 .image,
+    .linguagens--conteudo--2-2 .image,
+    .linguagens--conteudo--3-2 .image,
+    .linguagens--conteudo--4-2 .image {
+        height: 55px;
+    } 
+    .linguagens--conteudo--1 .image,
+    .linguagens--conteudo--2 .image,
+    .linguagens--conteudo--3 .image,
+    .linguagens--conteudo--4 .image {
+        height: 55px;
+    }
+    
+    .html1--content a, .css1--content a, .javascript--content a, .php--content a {
+        font-size: 11px;
+    }
+    label {
+        font-size: 12px;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        margin-top: 325px;
+    }
+}
+
+
+@media (max-width: 666px) {
+    header {
+        height: 110px;
+        
+    }
+    .header {
+        justify-content: center;
+    }
+    header .menu, 
+    header .contato {
+        display: none;
+    }
+    .botao--menu--mobile {
+        display: flex;
+    }
+
+    main {
+        height: 400px;
+        top: 210px;
+    }
+    .banner {
+        height: 400px;
+    }
+    .banner--area {
+        height: 300px;
+    }
+    .banner--area-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner--area--content {
+        width: 50vw;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner--area--content img{
+        margin-top: 40px;
+        width: 180px;
+        height: 140px;
+    }
+    .banner--area--content p{
+        max-width: 500px;
+        width: 370px;
+        margin-left: 50px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .inputs--area1 {
+        width: 20vw;
+    }
+    .portfolio--content {
+        top: -45px;
+        width: 70vw;
+    }
+    .aside--portifolio {
+        width: 70vw;
+        left: 15%;
+    }
+
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+        width: 40vw;
+    }
+
+    .linguagens--conteudo--1 .image,
+    .linguagens--conteudo--2 .image,
+    .linguagens--conteudo--3 .image,
+    .linguagens--conteudo--4 .image {
+        height: 130px;
+        width: 20vw;
+    }
+    .linguagens--conteudo--1-2 ,
+    .linguagens--conteudo--2-2 ,
+    .linguagens--conteudo--3-2 ,
+    .linguagens--conteudo--4-2 {
+        height: 650px;
+        margin-top: 325px;
+        flex-direction: column;
+    } 
+    .linguagens--conteudo--1-2 .image,
+    .linguagens--conteudo--2-2 .image,
+    .linguagens--conteudo--3-2 .image,
+    .linguagens--conteudo--4-2 .image {
+        height: 130px;
+        width: 20vw;
+        margin-left: -45px;
+    } 
+    
+    .linguagens--conteudo2, .linguagens--conteudo {
+        overflow: auto;
+        width: 55vw;
+    }
+
+    .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul  {
+        width: 55vw;
+    }
+
+    .linguagens--conteudo--1 .image,
+    .linguagens--conteudo--2 .image,
+    .linguagens--conteudo--3 .image,
+    .linguagens--conteudo--4 .image {
+        
+        margin-left: -45px;
+    } 
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        margin-top: 325px;
+    }
+    
+}
+
+@media (max-width: 620px) {
+    main, .contato-form {
+        width: 70vw;
+    }
+    .contato-form form {
+        width: 60vw;
+    }    
+    .inputs--area1 {
+        width: 30vw;
+    }
+    #email, #name, #celular {
+        width: 30vw;
+    }
+    .message--flua {
+        margin-left: 25px;
+    }
+    .contato-form form button {
+        width: 52.5vw;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        margin-top: 325px;
+    }
+}
+
+@media (max-width: 452px) {
+    .header img {
+        width: 125px;
+    }
+    .banner h1 {
+        margin-top: -25px;
+    }
+    .banner--area--content p {
+        max-width: 290px;
+        width: 250px;
+    }
+    .contato-form form fieldset {
+        margin-left: -5px;
+        margin-top: -15px;
+        height: 360px;
+    }
+    .inputs--area1 {
+        width: 53vw;
+    }
+    #email, #name, #celular {
+        width: 53vw;
+    }
+    .message--flua {
+        margin-top: 0px; 
+        margin-left: 0px;
+    }
+    #message {
+        width: 53vw;
+        height: 65px;
+    }
+    .portfolio--content, .aside--portifolio {
+        width: 75vw;
+    }
+    .aside--portifolio {
+        left: 12%;
+    }
+    .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul  {
+        width: 70vw;
+    }
+    .linguagens--conteudo2, .linguagens--conteudo {
+        width: 70vw;
+    }
+    .linguagens ul li, .linguagens2 ul, li {
+        font-size: 10px;
+    }
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+        width: 60vw;
+        margin-left: -30px;
+    }
+    .html1--content, .css1--content, .javascript--content, .php--content {
+        width: 20vw;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        margin-top: 0px;
+        
+    }
+    header {
+        height: 90px;
+    }
+    main {
+        top: 180px
+    }
+    footer {
+        right: -7px;
+        bottom: -25px;
+        width: 80px;
+        height: 80px;
+    }
+    .aside-button {
+        top: 8px;
+        right: 8px;
+        padding: 0px 5px;  
+    }
+
+}
+
+@media (max-width: 375px) {
+    .banner--area--content p {
+        width: 200px;
+    }
+    .botoes {
+        width: 63vw;
+    }
+    .botoes .seta {
+        width: 20px;
+    }
+    .portfolio--content, .aside--portifolio {
+        width: 80vw;
+    }
+    .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul {
+        width: 75vw;
+    }
+    .linguagens--conteudo2, .linguagens--conteudo {
+        width: 75vw;
+    }
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+        
+        margin-left: 0px;
+    }
+    .aside-button {
+        top: 8px;
+        right: 8px;
+        padding: 0px 5px;  
+    }
+}
+
+@media (min-height: 900px) {
+    .header img {
+        margin-left: 35px;
+    }
+    main {
+        height: 60vh;
+        justify-content: center;
+    }
+    .contato-form {
+        height: 55vh;
+    }
+    .contato-form form {
+        width: 50vw;
+    }
+    .contato-form form fieldset {
+        height: 45vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #email, #name, #celular {
+        height: 6vh;
+    }
+    #message {
+        height: 24vh;
+    }
+    .message--flua {
+        margin-left: 40px;
+    }
+    .contato-form form button {
+        height: 6vh;
+    }
+    .portfolio--content {
+        height: 60vh;
+    }
+
+    ul li a, .contato {
+        font-size: 26px;
+        margin-right: 26px;
+    }
+    label, legend {
+        font-size: 20px;
+    }
+    .linguagens ,
+    .linguagens2  {
+        margin-top: 45px;
+    }
+    .linguagens ul,
+    .linguagens2 ul {
+        font-size: 18px;
+        height: 45px;
+    }
+    .linguagens ul li,
+    .linguagens2 ul li,
+    .divs_orientadoras, .divs_orientadoras2{
+        height: 45px;
+    }
+    .divs_html, .divs_css, .divs_javascript, .divs_php, .divs_todos {
+        height: 45px;
+    }
+    .linguagens--conteudo,
+    .linguagens--conteudo2 {
+        margin-top: 60px;
+        height: 375px;
+    }
+    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
+        font-size: 16px;
+    }
+
+    .divCss, .divHtml, .divPhp, .divjava, .aside--portifolio  {
+        margin-top: 260px;
+        height: 60vh;
+    }
+}
