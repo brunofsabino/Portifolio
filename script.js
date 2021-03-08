@@ -356,9 +356,9 @@ function updateSlider(){
 }
 
 
-// setInterval(() => {
-//     avancar()
-// }, 5000);
+ setInterval(() => {
+    avancar()
+}, 5000);
 
 const header = document.querySelector('header')
 
