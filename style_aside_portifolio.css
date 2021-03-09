@@ -559,11 +559,16 @@ aside .linguagens--conteudo {
     .divs_html, .divs_css, .divs_javascript, .divs_php, .divs_todos {
         height: 45px;
     }
-    .linguagens--conteudo,
+    
     .linguagens--conteudo2 {
         margin-top: 84px;
         height: 375px;
     }
+    .linguagens--conteudo {
+        margin-top: 60px;
+        height: 375px;
+    }
+    
     .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
         font-size: 16px;
     }
