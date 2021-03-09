@@ -851,6 +851,17 @@ footer {
     border-bottom: none;
 }
 
+.fecharMenu{
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    text-align: center;
+    color: white;
+    line-height: 23px;
+    border: none;
+}
+
 
 
 
@@ -1216,6 +1227,7 @@ footer {
 }
 
 @media (max-width: 375px) {
+
     .contato-form form {
         width: 64vw;
     }	
@@ -1236,7 +1248,7 @@ footer {
     }
     
     .linguagens--conteudo {
-        width: 70vw;
+        width: 75vw;
         margin-top: 29px;
         height: 48vh;
     }
@@ -1248,7 +1260,7 @@ footer {
 
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
         
-        margin-left: 0px;
+        margin-left: -20px;
     }
     .aside-button {
         top: 8px;
@@ -1268,6 +1280,11 @@ footer {
         height: 80px;
         width: 22vw;
     } 
+    .linguagens2 p {
+        font-size: 12px;
+        margin-top: 16px;
+        margin-bottom: 30px;
+    }
 
 }
 
