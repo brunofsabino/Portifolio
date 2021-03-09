@@ -486,7 +486,9 @@ aside .linguagens--conteudo {
         width: 75vw;
     }
     .linguagens--conteudo2, .linguagens--conteudo {
-        width: 75vw;
+        width: 70vw;
+        margin-top: 76px;
+        height: 48vh;
     }
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
         
@@ -496,6 +498,9 @@ aside .linguagens--conteudo {
         top: 8px;
         right: 8px;
         padding: 0px 5px;  
+    }
+    .linguagens ul li, .linguagens2 ul, li {
+    font-size: 9px;
     }
 }
 
