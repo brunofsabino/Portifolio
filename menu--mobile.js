@@ -101,8 +101,6 @@ function portfolio2() {
 
     
 
-    console.log(tamanhoTela)
-
     banner2.style.display = 'none'
     contatoForm2.style.display = 'none'
 
