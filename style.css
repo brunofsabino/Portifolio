@@ -1199,6 +1199,19 @@ footer {
         right: 8px;
         padding: 0px 5px;  
     }
+    .linguagens--conteudo--1 .image, .linguagens--conteudo--2 .image, .linguagens--conteudo--3 .image, .linguagens--conteudo--4 .image {
+   	height: 90px;
+    	width: 22vw;
+    	margin-left: 0px;
+    }	
+    .linguagens--conteudo--1-2 .image,
+    .linguagens--conteudo--2-2 .image,
+    .linguagens--conteudo--3-2 .image,
+    .linguagens--conteudo--4-2 .image {
+        height: 90px;
+    	width: 22vw;
+    	margin-left: 0px;
+    } 
 
 }
 
