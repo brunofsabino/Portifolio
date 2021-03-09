@@ -1213,11 +1213,17 @@ footer {
         width: 75vw;
     }
     
-    .linguagens--conteudo2, .linguagens--conteudo {
+    .linguagens--conteudo {
         width: 70vw;
-        margin-top: 76px;
+        margin-top: 29px;
         height: 48vh;
     }
+    .linguagens--conteudo2 {
+        width: 75vw;
+        margin-top: 92px;
+        height: 48vh;
+    }
+
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
         
         margin-left: 0px;
@@ -1232,6 +1238,15 @@ footer {
         width: 22vw;
         margin-left: -45px;
     }
+	
+    .linguagens--conteudo--1-2 .image,
+    .linguagens--conteudo--2-2 .image,
+    .linguagens--conteudo--3-2 .image,
+    .linguagens--conteudo--4-2 .image {
+        height: 80px;
+        width: 22vw;
+    } 
+
 }
 
 
