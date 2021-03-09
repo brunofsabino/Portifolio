@@ -866,9 +866,11 @@ footer {
     .banner--area--content p {
         left: -30px;
     }
+	/*
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
         margin-top: 325px;
-    }
+    } 
+	*/
 }
 
 @media (max-width: 1040px) {
@@ -889,9 +891,11 @@ footer {
     .linguagens2 ul, li {
         font-size: 12px;
     }
+	/*
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
         margin-top: 325px;
     }
+	*/
 
 }
 @media (max-width: 960px) {
