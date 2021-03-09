@@ -465,6 +465,9 @@ aside .linguagens--conteudo {
 }
 
 @media (max-width: 375px) {
+    .contato-form form {
+        width: 64vw;
+    }
     .banner--area--content p {
         width: 200px;
     }
