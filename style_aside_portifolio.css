@@ -329,6 +329,7 @@ aside .linguagens--conteudo {
     .linguagens--conteudo--4 .image {
         height: 130px;
         width: 20vw;
+        margin-left: -45px;
     }
     .linguagens--conteudo--1-2 ,
     .linguagens--conteudo--2-2 ,
@@ -356,13 +357,7 @@ aside .linguagens--conteudo {
         width: 55vw;
     }
 
-    .linguagens--conteudo--1 .image,
-    .linguagens--conteudo--2 .image,
-    .linguagens--conteudo--3 .image,
-    .linguagens--conteudo--4 .image {
-        
-        margin-left: -45px;
-    } 
+    
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
         margin-top: 325px;
     }
@@ -485,9 +480,14 @@ aside .linguagens--conteudo {
     .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul {
         width: 75vw;
     }
-    .linguagens--conteudo2, .linguagens--conteudo {
+    .linguagens--conteudo {
         width: 70vw;
-        margin-top: 76px;
+        margin-top: 29px;
+        height: 48vh;
+    }
+    .linguagens--conteudo2 {
+        width: 75vw;
+        margin-top: 92px;
         height: 48vh;
     }
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
@@ -507,6 +507,14 @@ aside .linguagens--conteudo {
         width: 22vw;
         margin-left: -45px;
     }
+    .linguagens--conteudo--1-2 .image,
+    .linguagens--conteudo--2-2 .image,
+    .linguagens--conteudo--3-2 .image,
+    .linguagens--conteudo--4-2 .image {
+        height: 80px;
+        width: 22vw;
+    } 
+    
 }
 
 @media (min-height: 900px) {
