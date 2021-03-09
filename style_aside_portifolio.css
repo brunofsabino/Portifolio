@@ -462,6 +462,12 @@ aside .linguagens--conteudo {
         padding: 0px 5px;  
     }
 
+    .linguagens--conteudo--1 .image, .linguagens--conteudo--2 .image, .linguagens--conteudo--3 .image, .linguagens--conteudo--4 .image {
+        height: 90px;
+        width: 22vw;
+        margin-left: 0px;
+    }
+
 }
 
 @media (max-width: 375px) {
@@ -484,7 +490,7 @@ aside .linguagens--conteudo {
         width: 75vw;
     }
     .linguagens--conteudo {
-        width: 70vw;
+        width: 75vw;
         margin-top: 29px;
         height: 48vh;
     }
@@ -495,7 +501,7 @@ aside .linguagens--conteudo {
     }
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
         
-        margin-left: 0px;
+        margin-left: -20px;
     }
     .aside-button {
         top: 8px;
@@ -518,6 +524,11 @@ aside .linguagens--conteudo {
         width: 22vw;
         margin-left: 0px;
     }  
+    .linguagens2 p {
+        font-size: 12px;
+        margin-top: 16px;
+        margin-bottom: 30px;
+    }
     
 }
 
