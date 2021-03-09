@@ -209,9 +209,11 @@ aside .linguagens--conteudo {
     .atendimento {
         display: none;
     }
+    /*
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
         margin-top: 325px;
     }
+    */
 }
 
 @media (max-width: 700px) {
