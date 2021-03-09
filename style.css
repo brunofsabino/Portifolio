@@ -1158,9 +1158,15 @@ footer {
     .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul  {
         width: 70vw;
     }
-    .linguagens--conteudo2, .linguagens--conteudo {
+    .linguagens--conteudo2 {
         width: 70vw;
+	margin-top: 29px;
     }
+    .linguagens--conteudo {
+        margin-top: 29px;
+	width: 70vw;
+    }
+	
     .linguagens ul li, .linguagens2 ul, li {
         font-size: 10px;
     }
