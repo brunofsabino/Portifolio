@@ -502,6 +502,11 @@ aside .linguagens--conteudo {
     .linguagens ul li, .linguagens2 ul, li {
     font-size: 9px;
     }
+    .linguagens--conteudo--1-2 .image, .linguagens--conteudo--2-2 .image, .linguagens--conteudo--3-2 .image, .linguagens--conteudo--4-2 .image {
+        height: 80px;
+        width: 22vw;
+        margin-left: -45px;
+    }
 }
 
 @media (min-height: 900px) {
