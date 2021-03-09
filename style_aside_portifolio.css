@@ -508,7 +508,7 @@ aside .linguagens--conteudo {
         justify-content: center;
     }
     .contato-form {
-        height: 55vh;
+        height: 60vh;
     }
     .contato-form form {
         width: 50vw;
@@ -529,6 +529,7 @@ aside .linguagens--conteudo {
     }
     .contato-form form button {
         height: 6vh;
+        font-size: 20px;
     }
     .portfolio--content {
         height: 60vh;
