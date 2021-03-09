@@ -373,6 +373,7 @@ const banner = document.querySelector('.banner')
 const contatoForm = document.querySelector('.contato-form')
 const portfolioContent = document.querySelector('.portfolio--content')
 
+const tamanhoTelaAltura = document.querySelector('aside').clientHeight
 
 function responsivo() {
     if(orcamentos.classList.contains('selecionada')) {
@@ -468,7 +469,7 @@ function portfolio() {
 
     portfolioContent.style.display = 'flex'
 
-    if(tamanhoTela >= '900') {
+    if(tamanhoTelaAltura >= '900') {
         header.style.top = '60px'
         header.style.height = '150px'
 
