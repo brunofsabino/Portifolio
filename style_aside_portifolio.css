@@ -430,6 +430,9 @@ aside .linguagens--conteudo {
     .linguagens--conteudo2, .linguagens--conteudo {
         width: 70vw;
     }
+    .linguagens--conteudo2 {
+        margin-top: 68px;
+    }
     .linguagens ul li, .linguagens2 ul, li {
         font-size: 10px;
     }
