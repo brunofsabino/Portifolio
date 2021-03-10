@@ -470,7 +470,13 @@ aside .linguagens--conteudo {
         width: 22vw;
         margin-left: 0px;
     }
-
+    
+    .linguagens--conteudo--1-2 .image, .linguagens--conteudo--2-2 .image, .linguagens--conteudo--3-2 .image, .linguagens--conteudo--4-2 .image {
+        height: 90px;
+        width: 22vw;
+        margin-left: 0px;
+        
+    }
 }
 
 @media (max-width: 375px) {
