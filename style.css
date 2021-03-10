@@ -1375,7 +1375,7 @@ footer {
     }		    
 }
 
-@media (min-width: 667px) and (min-height: 960px){
+@media (min-width: 667px) and (min-height: 901px){
     main {
         height: 60vh;
         justify-content: center;
