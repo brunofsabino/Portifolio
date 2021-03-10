@@ -731,4 +731,19 @@ aside .linguagens--conteudo {
 	ul li a, .contato {
     		font-size: 20px;
 	}
+	label, legend {
+   		font-size: 18px;
+	}
+	#message {
+    		height: 20vh;
+	}
+	.contato-form form fieldset {
+    		height: 40vh;
+	}
+	.contato-form, .banner {
+   		height: 50vh;
+	}
+	main {
+  	  	height: 50vh;
+	}
 }
