@@ -723,3 +723,12 @@ aside .linguagens--conteudo {
 	height: 55vh;
     }
 }
+
+@media (min-width: 1024px) and (min-height: 1366px){
+	.atendimento {
+		display: none;
+	}
+	ul li a, .contato {
+    		font-size: 20px;
+	}
+}
