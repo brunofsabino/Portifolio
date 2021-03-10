@@ -532,7 +532,7 @@ aside .linguagens--conteudo {
     
 }
 
-@media (min-height: 900px) {
+@media (min-width: 1500px) and (min-height: 800px) {
     .header img {
         margin-left: 35px;
     }
