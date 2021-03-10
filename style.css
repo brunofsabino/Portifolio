@@ -1289,7 +1289,7 @@ footer {
 }
 
 
-@media (min-height: 900px) {
+@media (min-width: 1500px) and (min-height: 800px) {
     main {
         height: 60vh;
         justify-content: center;
