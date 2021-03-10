@@ -1464,7 +1464,7 @@ footer {
         width: 20vw;
     }
     .linguagens--conteudo, .linguagens--conteudo2 {
-        height: 45vh;
+        height: 42vh;
     }
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4  {
         height: 45vh;
@@ -1472,4 +1472,7 @@ footer {
     .linguagens--conteudo--1-2, .linguagens--conteudo--2-2, .linguagens--conteudo--3-2, .linguagens--conteudo--4-2 {
         height: 45vh;
     }
+    .portfolio--content {
+	height: 55vh;
+    }	    
 }
