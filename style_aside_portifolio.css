@@ -620,3 +620,103 @@ aside .linguagens--conteudo {
         height: 60vh;
     }
 }
+
+
+@media (min-width: 768px) and (min-height: 1024px){
+    main {
+        height: 60vh;
+        justify-content: center;
+    }
+    .contato-form, .banner {
+        height: 60vh;
+    }
+    .banner--area {
+        height: 50vh;
+        align-items: center;
+    }
+    .banner--area-slide {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner--titulo {
+        margin-bottom: 50px;
+    }    
+    .banner h1 {
+        font-size: 36px;
+    }
+    .contato-form form {
+        width: 50vw;
+    }
+    .contato-form form fieldset {
+        height: 45vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #email, #name, #celular {
+        height: 5vh;
+    }
+    #message {
+        height: 21.5vh;
+    }
+    .message--flua {
+        margin-left: 40px;
+    }
+    .contato-form form button {
+        height: 6vh;
+	font-size: 20px;
+    }
+    .portfolio--content {
+        height: 60vh;
+    }
+
+    ul li a, .contato {
+        font-size: 18px;
+    }
+    label, legend {
+        font-size: 14px;
+    }
+    .linguagens ul,
+    .linguagens2 ul {
+        font-size: 18px;
+    }
+    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
+        font-size: 14px;
+    }
+
+    .divCss, .divHtml, .divPhp, .divjava, .aside--portifolio  {
+        margin-top: 260px;
+        height: 60vh;
+    }
+    footer {
+        width: 180px;
+        height: 180px;
+        right: 0px;
+        bottom: -35px;
+    }
+    .atendimento {
+        width: 165px;
+        height: 53px;
+        bottom: 85px;
+    }
+    .atendimento span {
+        font-size: 15px;
+        color: #fff;
+        line-height: 23px;
+    }		 
+    
+    .inputs--area1 {
+        width: 20vw;
+    }
+    .linguagens--conteudo, .linguagens--conteudo2 {
+        height: 45vh;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4  {
+        height: 45vh;
+    }
+    .linguagens--conteudo--1-2, .linguagens--conteudo--2-2, .linguagens--conteudo--3-2, .linguagens--conteudo--4-2 {
+        height: 45vh;
+    }
+}
