@@ -1134,7 +1134,7 @@ footer {
 
 @media (max-width: 452px) {
     .header img {
-        width: 125px;
+        width: 100px;
     }
     .banner h1 {
         margin-top: -25px;
