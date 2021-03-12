@@ -747,3 +747,17 @@ aside .linguagens--conteudo {
   	  	height: 50vh;
 	}
 }
+
+
+@media (min-width: 1440px) and (min-height: 900px) {
+	footer {
+     		right: 100px;
+    		bottom: 13px;
+	}
+	#email, #name, #celular {
+    		width: 21vw;
+   	}
+	.contato-form form button {
+    		width: 41vw;
+	}
+}	
