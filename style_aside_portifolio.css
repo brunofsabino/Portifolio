@@ -772,3 +772,9 @@ aside .linguagens--conteudo {
 	}
 	
 }
+
+@media (min-width: 1366px) and (min-height: 625px) {
+	#message {
+    		width: 19vw;
+  	}	
+}
