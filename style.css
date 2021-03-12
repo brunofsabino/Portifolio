@@ -1531,3 +1531,7 @@ footer {
   	}	
 }
 
+@media (min-width: 1920px) and (min-height: 937px)
+.portfolio--content {
+    height: 60vh;
+}
