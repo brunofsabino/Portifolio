@@ -1513,3 +1513,14 @@ footer {
     		width: 41vw;
 	}
 }
+
+
+@media (min-width: 1680px) and (min-height: 1050px) {
+	ul li a, .contato {
+    		font-size: 22px;
+	}
+	label, legend {
+    		font-size: 18px;
+	}
+	
+}
