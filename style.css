@@ -5,7 +5,11 @@
     font-family: 'Reggae One', cursive; 
     text-decoration: none;
     list-style: none;
+    scroll-behavior: smooth;
 }
+/* html {
+    
+ } */
 
 body {
     /* position: relative; */
@@ -15,16 +19,28 @@ body {
     /* background-color: #51c2f230; */
     background-color: #E6F9E2;
     /* background-color: #C4E4BB; */
+    /* overflow: hidden; */
+    
+    overflow-x: hidden;
+}
+.animation {
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+    height: 280vh;
+    
+}
+.content--body {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    height: 280vh;
 }
 aside {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
-    overflow: hidden; 
+    /* overflow: hidden;  */
     position: relative;
     
 }
@@ -268,7 +284,7 @@ aside {
     }
     to {
         opacity: 0;
-        transform: translateY(100vh)  rotate(960deg);
+        transform: translateY(280vh)  rotate(960deg);
     }    
 }
 
@@ -284,21 +300,21 @@ aside {
 } */
 
 header {
-    position: absolute;
+    position: fixed;
     
     width: 80vw;
     height: 150px;
-    top: 60px;
+    top: 5%;
     border-radius: 5px;
     
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center; 
     background-color: #FFF;
-    z-index: 1;
-    animation: aparecer 7s;
+    z-index: 100;
+    /* animation: aparecer 3s; */
     box-shadow: 0px 0px 15px #999;
-    transition: 0.5s linear;
+    transition: 0.3s ;
 }  
 
 
@@ -306,7 +322,7 @@ header {
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     
 }
@@ -318,6 +334,8 @@ header {
 }
 .header img {
     width: 200px;
+    position: absolute;
+    left: 5%;
 }
 
 .header ul {
@@ -386,25 +404,18 @@ a:hover, .contato:hover {
 
 main {
     position: absolute;
-    
-    width: 60vw;
-    height: 310px;
-    top: 260px;
-    border-radius: 5px;
-    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center; 
-    background-color: #FFF;
-    z-index: 1;
-    animation: aparecer 7s;
-    box-shadow: 0px 0px 15px #999;
+   
     
+    /* animation: aparecer 3s; */
+    /* */
+    top: 33%;
 }
 .banner {
     width: 60vw;
-    height: 310px;
+    height: 60vh;
+    border-radius: 5px;
     font-family: brush-script-std, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -413,6 +424,14 @@ main {
     align-items: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 15px #999;
+    background-color: #FFF;
+    /* top: calc(630px - 100vh); */
+    /* top: -28 */
+    /* margin-top: -8%; */
+    /* margin-top: calc(85% - 100vh); */
+
+    z-index: 1;
 }
 .banner--area {
     height: 280px;
@@ -499,36 +518,46 @@ main {
 } */
 .contato-form {
     width: 60vw;
-    height: 340px;
-    font-family: brush-script-std, sans-serif;
+    height: 70vh;
     font-weight: 400;
+    color: #A12E1F;
     font-style: normal;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: #FFF;
     box-shadow: 0px 0px 15px #999;
     border-radius: 5px;
-    display: none;
+    top: 255px;
+    z-index: 1;
 }
 .contato-form form {
-    width: 50vw;
+    width: 55vw;
+    height: 55vh;
     padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contato-form form fieldset {
-    height: 270px;
+    height: 55vh;
     padding: 20px;
     color: #A12E1F;
     border: 2px solid #A12E1F;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 #email, #name, #celular  {
     width: 23vw;
     height: 29px;
     border-radius: 5px;
     border: 2px solid #4FA179;
+    margin-bottom: 20px
 }
 #message {
     width: 18vw;
@@ -564,19 +593,21 @@ main {
 
 .portfolio--content {
     width: 60vw;
-    height: 310px;
+    height: 80vh;
     font-family: brush-script-std, sans-serif;
     font-weight: 400;
     font-style: normal;
     display: flex;
-    position: absolute;
+    position: relative;
     box-shadow: 0px 0px 15px #999;
     border-radius: 5px;
     flex-direction: column;
     align-items: center;
-    display: none;
     background-color: #FFF;
-    transition: 2s linear;
+    /* transition: 2s linear; */
+    /* top: calc(775px - 100vh); */
+    top: 150px;
+    z-index: 1;
 }
 
 
@@ -600,14 +631,14 @@ main {
 } */
 .linguagens {
     width: 45vw;
-    height: 30px;
+    height: 5vh;
     
     margin-top: 30px;
 
 }
 .linguagens ul {
     width: 45vw;
-    height: 30px;
+    height: 5vh;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -620,7 +651,7 @@ aside .linguagens ul {
 
 .linguagens ul li {
     width: 25%;
-    height: 30px;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -680,7 +711,7 @@ aside .linguagens ul {
 }
 .divs_orientadoras {
     width: 45vw;
-    height: 30px;
+    height: 5vh;
     display: flex;
 }
 .divs_html,
@@ -689,13 +720,13 @@ aside .linguagens ul {
 .divs_php,
 .divs_todos {
     width: 25%;
-    height: 30px;
+    height: 5vh;
 }
 .linguagens--conteudo {
     width: 45vw;
-    height: 340px;
+    height: 58vh;
     background-color: #f4450b4b;
-    margin-top: 30px;
+    margin-top: 5vh;
     border-radius: 35px;
     border-top-left-radius: 0px;
     display: flex;
@@ -708,7 +739,7 @@ aside .linguagens ul {
 .linguagens--conteudo--3,
 .linguagens--conteudo--4 {
     width: 45vw;
-    height: 340px;
+    height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -771,8 +802,8 @@ aside .linguagens ul {
     font-size: 12px;
 }
 footer {
-    
-    position: absolute;
+    display: none;
+    position: fixed;
     right: 75px;
     bottom: 0px;
     width: 100px;
@@ -789,9 +820,10 @@ footer {
     animation-iteration-count: infinite;
 }
 .atendimento {
+    display: none;
     width: 118px;
     height: 38px;
-    position: absolute;
+    position: fixed;
     background-color: #1d4c22;
     bottom: 41px;
     right: 6px;
@@ -866,10 +898,8 @@ footer {
 
 
 
-@media (max-width: 1160px) {
-    body {
-        overflow: hidden;
-    }
+@media (min-width: 1900px) and (min-height: 900px) {
+    
     .banner--area--content img {
         width: 200px;
         height: 150px;
@@ -877,14 +907,49 @@ footer {
     .banner--area--content p {
         left: -30px;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
-    } 
-	*/
+	
+    footer {
+        right: 150px;
+    }
+    .atendimento {
+        right: 57px;
+    }
 }
 
-@media (max-width: 1040px) {
+@media (min-width: 1920px) and (min-height: 1050px) {
+
+    .banner--area {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner--area-slide {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner--area--content img {
+        width: 300px;
+        height: 200px;
+        
+    }
+    
+	
+    
+    .banner--titulo {
+        height: 100px;
+    }
+    .banner h1 {
+        font-size: 30px;
+    }
+    .banner--area--content p {
+        
+        max-width: 237px;
+        top: 0px;
+    }
 
     .linguagens--conteudo--1-2 .image,
     .linguagens--conteudo--2-2 .image,
@@ -900,16 +965,203 @@ footer {
     }
     .linguagens ul li,
     .linguagens2 ul, li {
-        font-size: 12px;
+        font-size: 16px;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
+    #message {
+        height: 17vh;
     }
-	*/
+
+    footer {
+        right: 250px;
+        bottom: 50px;
+    }
+    .atendimento {
+        right: 180px;
+        bottom: 90px;
+    }
 
 }
-@media (max-width: 960px) {
+
+@media (min-width: 1680px) and (min-height: 1050px) {
+    
+    #message {
+        height: 17vh;
+        margin-bottom: 10px;
+    }
+     footer {
+        right: 250px;
+        bottom: 50px;
+    }
+    .atendimento {
+        right: 180px;
+        bottom: 90px;
+    }
+}
+
+@media (min-width: 1440px) and (min-height: 900px) {
+    
+    #message {
+        height: 19vh;
+        margin-bottom: 10px;
+    }
+    footer {
+        right: 250px;
+        bottom: 50px;
+    }
+    .atendimento {
+        right: 180px;
+        bottom: 90px;
+    }
+}
+@media (min-width: 1300px) and (min-height: 600px) {
+    
+    #message {
+        height: 28vh;
+        margin-bottom: 10px;
+    }
+    /* footer {
+        right: 250px;
+        bottom: 50px;
+    }
+    .atendimento {
+        right: 180px;
+        bottom: 90px;
+    } */
+}
+@media (min-width: 1024px) and (min-height: 768px) {
+    .banner--area--content p {
+        font-size: 16px;
+        max-width: 200px;
+        top: 20px;
+        margin-left: 10px;
+    }
+    #message {
+        height: 22vh;
+        margin-bottom: 10px;
+    }
+    footer {
+        right: 200px;
+        bottom: 50px;
+    }
+    .atendimento {
+        right: 130px;
+        bottom: 90px;
+    }
+}
+
+@media (min-width: 1800px) {
+    #message {
+        height: 19vh;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (min-width: 768px) and (min-height: 1024px){ 
+    
+    
+    .banner--area {
+        height: 50vh;
+        align-items: center;
+    }
+    .banner--area--content p {
+        font-size: 16px;
+        max-width: 200px;
+        margin-left: 75px;
+        top: -7px;
+    }
+    .banner--area-slide {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner--titulo {
+        margin-bottom: 50px;
+    }    
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner--area--content img {
+        width: 200px;
+        height: 150px;
+        
+    }
+    
+    
+    #email, #name, #celular {
+        height: 5vh;
+    }
+    #message {
+        height: 21.5vh;
+    }
+    .message--flua {
+        margin-left: 40px;
+    }
+    
+    
+
+    ul li a, .contato {
+        font-size: 18px;
+    }
+    label, legend {
+        font-size: 14px;
+    }
+    .linguagens ul,
+    .linguagens2 ul {
+        font-size: 12px;
+    }
+    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
+        font-size: 14px;
+    }
+
+    .divCss, .divHtml, .divPhp, .divjava, .aside--portifolio  {
+        margin-top: 260px;
+        height: 60vh;
+    }
+    footer {
+        width: 100px;
+        height: 100px;
+        right: 200px;
+        bottom: 0px;
+    }
+    .atendimento {
+        width: 90px;
+        height: 30px;
+        right: 155px;
+        bottom: 45px;
+    }
+    .atendimento span {
+        font-size: 8px;
+        color: #fff;
+        line-height: 5px;
+
+    }	
+    
+    .inputs--area1 {
+        width: 20vw;
+    }
+    .linguagens--conteudo, .linguagens--conteudo2 {
+        height: 45vh;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4  {
+        height: 45vh;
+    }
+    .linguagens--conteudo--1-2, .linguagens--conteudo--2-2, .linguagens--conteudo--3-2, .linguagens--conteudo--4-2 {
+        height: 45vh;
+    }
+} 
+
+
+ /* @media (max-width: 1040px) {
+
+    
+	
+
+}  */
+/* @media (max-width: 960px) {
     .banner h1 {
         font-size: 24px;
     }
@@ -918,14 +1170,10 @@ footer {
         max-width: 215px;
         top: 0px;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
-    }
-	*/
+	
     
-}
-@media (max-width: 856px) {
+} */
+/* @media (max-width: 856px) {
     .banner--area--content img {
         width: 150px;
         height: 100px;
@@ -936,14 +1184,10 @@ footer {
     .inputs--area1 {
         width: 21vw;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
-    }
-	*/
-}
+	
+} */
 
-@media (max-width: 790px) {
+@media (max-width: 790px) { 
     ul li a, .contato {
         font-size: 16px;
     }
@@ -970,14 +1214,10 @@ footer {
     .html1--content p, .css1--content p, .javascript--content p, .php--content p {
         font-size: 12px;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
-    }
-	*/
-}
+	
+} 
 
-@media (max-width: 700px) {
+@media (max-width: 700px) { 
     .banner--area--content img {
         width: 150px;
         height: 100px;
@@ -1009,37 +1249,59 @@ footer {
     label {
         font-size: 12px;
     }
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
-    }
-	*/
-}
+	
+} 
 
 
 @media (max-width: 666px) {
+    .animation,
+    .content--body {
+        height: 310vh;
+    }
     header {
         height: 110px;
-        
+        top: 0;
     }
     .header {
-        justify-content: center;
+        display: block;
+    }
+    .header .logo {
+        width: 100%;
+        height: 50px;
+    }
+    .header img {
+        width: 90px;
+        position: static;
+    }
+    nav {
+        height: 100px;
     }
     header .menu, 
-    header .contato {
-        display: none;
-    }
-    .botao--menu--mobile {
+    header {
         display: flex;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    .header ul li, .contato {
+        margin: 7%;
+    }
+    .orcamento, .responsivos, .portfolio {
+        height: 48px;
+    }
+    /* .botao--menu--mobile {
+        display: flex;
+    } */
 
-    main {
-        height: 400px;
-        top: 210px;
+    .banner, 
+    .portfolio--content,
+    .contato-form,
+    .banner--area-slide {
+        width: 75vw;
     }
-    .banner {
-        height: 400px;
-    }
+    
     .banner--area {
         height: 300px;
     }
@@ -1071,10 +1333,7 @@ footer {
     .inputs--area1 {
         width: 20vw;
     }
-    .portfolio--content {
-        top: -45px;
-        width: 70vw;
-    }
+    
     .aside--portifolio {
         width: 70vw;
         left: 15%;
@@ -1124,18 +1383,15 @@ footer {
         
         margin-left: -45px;
     } 
-	/*
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        margin-top: 325px;
+    .whats {
+        display: block;
     }
-    */
+	
 }
 
 
 @media (max-width: 452px) {
-    .header img {
-        width: 100px;
-    }
+    
     .banner h1 {
         margin-top: -25px;
     }
@@ -1143,11 +1399,7 @@ footer {
         max-width: 290px;
         width: 250px;
     }
-    .contato-form form fieldset {
-        margin-left: -5px;
-        margin-top: -15px;
-        height: 360px;
-    }
+    
     .inputs--area1 {
         width: 53vw;
     }
@@ -1163,15 +1415,13 @@ footer {
         height: 65px;
     }
 
-    .portfolio--content, .aside--portifolio {
-        width: 75vw;
-    }
+    
     .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul  {
         width: 70vw;
     }
     .linguagens--conteudo2 {
         width: 70vw;
-	margin-top: 68px;
+	margin-top: 29px;
     }
     .linguagens--conteudo {
         margin-top: 29px;
@@ -1195,9 +1445,7 @@ footer {
     header {
         height: 90px;
     }
-    main {
-        top: 180px
-    }
+    
     footer {
         right: -7px;
         bottom: -25px;
@@ -1227,12 +1475,45 @@ footer {
 }
 
 @media (max-width: 375px) {
-
-    .contato-form form {
-        width: 64vw;
-    }	
+    /* * {
+        
+    } */
+    header {
+        z-index: 2;
+        top: 0;
+    }
+    .header img {
+        margin-top: 5px;
+    }
+    nav, ul {
+        height: 50px;
+        margin-top: -5px;
+    }
+    ul li a, .contato {
+        font-size: 12px;
+        height: 50px;
+    }
+    .orcamento, .responsivos, .portfolio, .contato {
+        height: 40px;
+    }
+    .banner--area-slide {
+        padding: 25px;
+    }
+    .banner--area--content {
+        padding: 0px;
+    }
+    .banner--area--content img {
+        margin-top: 20px;
+    }
     .banner--area--content p {
-        width: 200px;
+        width: 230px;
+        margin-left: 116px;
+        font-size: 12px;
+        margin-top: 0px;
+    }
+    .banner h1 {
+        margin-top: 15px;
+        font-size: 18px;
     }
     .botoes {
         width: 63vw;
@@ -1240,28 +1521,25 @@ footer {
     .botoes .seta {
         width: 20px;
     }
-    .portfolio--content, .aside--portifolio {
-        width: 80vw;
-    }
-    .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul {
-        width: 75vw;
-    }
     
+    .linguagens, .linguagens2, .divs_orientadoras, .divs_orientadoras2, .linguagens ul, .linguagens2 ul {
+        width: 70vw;
+    }
+    .linguagens ul li, .linguagens2 ul, li {
+        font-size: 7.5px;
+    }
     .linguagens--conteudo {
-        width: 75vw;
-        margin-top: 29px;
-        height: 48vh;
+        width: 70vw;
+        margin-top: 18px;
+        height: 60vh;
     }
     .linguagens--conteudo2 {
-        width: 75vw;
+        width: 70vw;
         margin-top: 92px;
         height: 48vh;
     }
 
-    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
-        
-        margin-left: -20px;
-    }
+    
     .aside-button {
         top: 8px;
         right: 8px;
@@ -1285,18 +1563,61 @@ footer {
         margin-top: 16px;
         margin-bottom: 30px;
     }
+    .banner, .portfolio--content, .contato-form, .banner--area-slide {
+        font-size: 10px;
+    }
+    .contato-form form {
+        width: 65vw;
+        height: 65vh;
+    }   
+    .contato-form form fieldset {
+        height: 64vh;
+    }
+    #email, #name, #celular {
+        margin-bottom: 5px;
+    } 
+    label {
+        font-size: 10px;
+    }
+    .message--flua {
+        margin-top: -3px;
+    }
+    .contato-form form button {
+        margin-top: 5px;
+    }
+    .whats {
+        display: flex;
+    }
+    footer {
+        display: flex;
+        right: 190px;
+        bottom: 60px;
+    }
+    .atendimento {
+        display: none;
+    }
 
 }
 
+@media (min-width: 375px) and (min-height: 800px) {
+    .animation,
+    .content--body {
+        height: 300vh;
+    }
+    header {
+        height: 100px;
+    }
+    .linguagens--conteudo {
+        margin-top: 34px;
+    }
+    .atendimento {
+        display: none;
+    }
+}
 
-@media (min-width: 1500px) and (min-height: 800px) {
-    main {
-        height: 60vh;
-        justify-content: center;
-    }
-    .contato-form, .banner {
-        height: 60vh;
-    }
+/* @media (min-width: 1500px) and (min-height: 800px){
+    
+    
     .banner--area {
         height: 50vh;
         align-items: center;
@@ -1314,14 +1635,8 @@ footer {
     .banner h1 {
         font-size: 36px;
     }
-    .contato-form form {
-        width: 50vw;
-    }
-    .contato-form form fieldset {
-        height: 45vh;
-        justify-content: center;
-        align-items: center;
-    }
+    
+    
     #email, #name, #celular {
         height: 6vh;
     }
@@ -1331,13 +1646,7 @@ footer {
     .message--flua {
         margin-left: 40px;
     }
-    .contato-form form button {
-        height: 6vh;
-	font-size: 20px;
-    }
-    .portfolio--content {
-        height: 60vh;
-    }
+    
 
     ul li a, .contato {
         font-size: 26px;
@@ -1360,7 +1669,7 @@ footer {
     footer {
         width: 180px;
         height: 180px;
-        right: 100px;
+        
         bottom: 10px;
     }
     .atendimento {
@@ -1373,166 +1682,42 @@ footer {
         color: #fff;
         line-height: 23px;
     }		    
+} */
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 20px;
+    border: 2px solid #8DC57E;
 }
-
-@media (min-width: 667px) and (min-height: 800px){
-    main {
-        height: 60vh;
-        justify-content: center;
-    }
-    .contato-form, .banner {
-        height: 60vh;
-    }
-    .banner--area {
-        height: 50vh;
-        align-items: center;
-    }
-    .banner--area-slide {
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .banner--titulo {
-        margin-bottom: 50px;
-    }    
-    .banner h1 {
-        font-size: 36px;
-    }
-    .contato-form form {
-        width: 50vw;
-    }
-    .contato-form form fieldset {
-        height: 45vh;
-        justify-content: center;
-        align-items: center;
-    }
-    #email, #name, #celular {
-        height: 5vh;
-    }
-    #message {
-        height: 21.5vh;
-    }
-    .message--flua {
-        margin-left: 40px;
-    }
-    .contato-form form button {
-        height: 6vh;
-	font-size: 20px;
-    }
-    .portfolio--content {
-        height: 60vh;
-    }
-
-    ul li a, .contato {
-        font-size: 18px;
-    }
-    label, legend {
-        font-size: 14px;
-    }
-    .linguagens ul,
-    .linguagens2 ul {
-        font-size: 18px;
-    }
-    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
-        font-size: 14px;
-    }
-
-    .divCss, .divHtml, .divPhp, .divjava, .aside--portifolio  {
-        margin-top: 260px;
-        height: 60vh;
-    }
-    footer {
-        width: 180px;
-        height: 180px;
-        right: 0px;
-        bottom: -35px;
-    }
-    .atendimento {
-        width: 165px;
-        height: 53px;
-        bottom: 85px;
-    }
-    .atendimento span {
-        font-size: 15px;
-        color: #fff;
-        line-height: 23px;
-    }		 
+::-webkit-scrollbar-track {
     
-    .inputs--area1 {
-        width: 20vw;
-    }
-    .linguagens--conteudo, .linguagens--conteudo2 {
-        height: 42vh;
-    }
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4  {
-        height: 45vh;
-    }
-    .linguagens--conteudo--1-2, .linguagens--conteudo--2-2, .linguagens--conteudo--3-2, .linguagens--conteudo--4-2 {
-        height: 45vh;
-    }
-    .portfolio--content {
-	height: 55vh;
-    }	    
+    background-color: #8DC57E;
+    background-color: #E6F9E2;
+    border: 2px solid #8DC57E;
+    /* border-radius: 10px; */
 }
-
-@media (min-width: 1024px) and (min-height: 1366px){
-	.atendimento {
-		display: none;
-	}
-	ul li a, .contato {
-    		font-size: 20px;
-	}
-	label, legend {
-   		font-size: 18px;
-	}
-	#message {
-    		height: 20vh;
-	}
-	.contato-form form fieldset {
-    		height: 40vh;
-	}
-	.contato-form, .banner {
-   		height: 50vh;
-	}
-	main {
-  	  	height: 50vh;
-	}
+/* ::-webkit-scrollbar-button {
+    background-color: #21543B;
+    background-color: #E6F9E2;
+    border: 1px solid #8DC57E;
+} */
+::-webkit-scrollbar-thumb {
+    background-color: #E6F9E2;
+    background-color: #21543B;
+    border: 2px solid #8DC57E;
+    border-radius: 10px;
 }
-
-@media (min-width: 1440px) and (min-height: 900px) {
-	footer {
-     		right: 100px;
-    		bottom: 13px;
-	}
-	#email, #name, #celular {
-    		width: 21vw;
-   	}
-	.contato-form form button {
-    		width: 41vw;
-	}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #21543B;
+    background-color: #E6F9E2;
+    border: 2px solid #8DC57E;
+    cursor: pointer;
 }
-
-
-@media (min-width: 1680px) and (min-height: 1050px) {
-	ul li a, .contato {
-    		font-size: 22px;
-	}
-	label, legend {
-    		font-size: 18px;
-	}
-	
-}
-
-@media (min-width: 1366px) and (min-height: 625px) {
-	#message {
-    		width: 19vw;
-  	}	
-}
-
-@media (min-width: 1920px) and (min-height: 937px) {
-	.portfolio--content {
-    	height: 60vh;
-	}
+::-webkit-scrollbar-track:hover {
+    background-color: #21543B;
 }
