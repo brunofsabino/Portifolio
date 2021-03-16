@@ -1,22 +1,33 @@
 const ulLinguagem = document.querySelector('ul.linguagens')
-const animacao = document.querySelector('.animacao-content')
+const animacaoBody = document.querySelector('.animation')
 
 
-for(let i = 0; i < 40; i++){
+const tamanhoTela = document.querySelector('.animation').clientWidth
+
+
+for(let i = 0; i < 80; i++){
     const div = document.createElement('div')
     
     const randomico = (minimo, maximo) => Math.random() * (maximo - minimo) + minimo
     const tamanho = Math.floor(randomico(7, 150))
-    const posicao =  Math.floor(randomico(1, 99))
+    
     const demora = randomico(5, 0.5)
-    const duracao = randomico(10,20)
+    const duracao = randomico(10,35)
     const fontSize = (tamanho / 5).toFixed(2)
+
+    // if( tamanhoTela < 667) {
+    //     let posicao =  Math.floor(randomico(10, 80))
+    // } else {
+    //     let posicao =  Math.floor(randomico(5, 90))
+    // }
+    let posicao =  Math.floor(randomico(1, 99))
+    const novaPosicao = posicao
 
     div.style.height = `${tamanho}px`
     div.style.width = `${tamanho+20}px`
     div.style.top = `-${tamanho}px`
    
-    div.style.left = `${posicao}%`
+    div.style.left = `${novaPosicao}%`
    
 
     div.classList.add('animacao')
@@ -29,7 +40,7 @@ for(let i = 0; i < 40; i++){
     div.style.animationDuration = `${duracao}s`
     
     div.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
-    animacao.appendChild(div)
+    animacaoBody.appendChild(div)
 
     if(i > 10 && i <= 20) {
         
@@ -37,7 +48,7 @@ for(let i = 0; i < 40; i++){
         div.style.width = `${tamanho+20}px`
         div.style.top = `-${tamanho}px`
        
-        div.style.left = `${posicao}%`
+        div.style.left = `${novaPosicao}%`
         div.classList.add('animacao2')
 
         div.innerHTML = "PHP"
@@ -48,15 +59,15 @@ for(let i = 0; i < 40; i++){
         div.style.animationDuration = `${duracao}s`
 
         div.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
-        animacao.appendChild(div)
-    } else if(i > 20 && i <= 30) {
+        animacaoBody.appendChild(div)
+    } else if(i > 20 && i <= 40) {
         
         div.style.height = `${tamanho}px`
         div.style.width = `${tamanho+20}px`
         div.style.top = `-${tamanho}px`
         
         
-        div.style.left = `${posicao}%`
+        div.style.left = `${novaPosicao}%`
 
         div.classList.add('animacao3')
 
@@ -71,15 +82,15 @@ for(let i = 0; i < 40; i++){
 
         div.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
 
-        animacao.appendChild(div)
+        animacaoBody.appendChild(div)
 
-    } else if (i > 30 && i <= 40){
+    } else if (i > 30 && i <= 60){
 
         div.style.height = `${tamanho}px`
         div.style.width = `${tamanho+20}px`
         div.style.top = `-${tamanho}px`
         
-        div.style.left = `${posicao}%`
+        div.style.left = `${novaPosicao}%`
         div.classList.add('animacao4')
     
         div.innerHTML = 'CSS'
@@ -92,7 +103,7 @@ for(let i = 0; i < 40; i++){
         div.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
 
         
-        animacao.appendChild(div)
+        animacaoBody.appendChild(div)
     }
 
     div.addEventListener('click', (e)=>{
@@ -109,63 +120,54 @@ for(let i = 0; i < 40; i++){
 
         if(div.innerHTML === 'CSS') {
 
-            if(asidePortifolio.style.display = 'flex'){
-                asidePortifolio.style.display = 'none'
+
+            if(tamanhoTela > 1439) {
+                window.scroll(0, 800)
+            } else if(tamanhoTela > 1300 && tamanhoTela < 1439) {
+                window.scroll(0, 582)
+            } else {
+                window.scroll(0, 600)
             }
 
-            divHtml.style.display = 'none' 
-            divPhp.style.display = 'none'
-            divJavascript.style.display  = 'none'
             
-            setTimeout(() => {
-                asidePortifolio.style.display = 'flex'
-            }, 300);
-            css_2()
-
+            css_() 
             
         }
         if(div.innerHTML === 'PHP') {
 
-            if(asidePortifolio.style.display = 'flex'){
-                asidePortifolio.style.display = 'none'
+            if(tamanhoTela > 1439) {
+                window.scroll(0, 800)
+            } else if(tamanhoTela > 1300 && tamanhoTela < 1439) {
+                window.scroll(0, 582)
+            } else {
+                window.scroll(0, 600)
             }
 
-            divHtml.style.display = 'none' 
-            divJavascript.style.display  = 'none'
-            divCss.style.display = 'none'
-            setTimeout(() => {
-                asidePortifolio.style.display = 'flex'
-            }, 300);
-            
-            php_2()
+            php_() 
         }
         if(div.innerHTML === 'HTML') {
-            if(asidePortifolio.style.display = 'flex'){
-                asidePortifolio.style.display = 'none'
+           
+            if(tamanhoTela > 1439) {
+                window.scroll(0, 800)
+            } else if(tamanhoTela > 1300 && tamanhoTela < 1439) {
+                window.scroll(0, 582)
+            } else {
+                window.scroll(0, 600)
             }
 
-            
-            divPhp.style.display = 'none'
-            divJavascript.style.display  = 'none'
-            divCss.style.display = 'none'
-            setTimeout(() => {
-                asidePortifolio.style.display = 'flex'
-            }, 300);
-            html_2()
+            html_() 
         }
         if(div.innerHTML === 'JavaScript') {
-            if(asidePortifolio.style.display = 'flex'){
-                asidePortifolio.style.display = 'none'
+            
+            if(tamanhoTela > 1439) {
+                window.scroll(0, 800)
+            } else if(tamanhoTela > 1300 && tamanhoTela < 1439) {
+                window.scroll(0, 582)
+            } else {
+                window.scroll(0, 600)
             }
 
-            divHtml.style.display = 'none' 
-            divPhp.style.display = 'none'
-            
-            divCss.style.display = 'none'
-            setTimeout(() => {
-                asidePortifolio.style.display = 'flex'
-            }, 300);
-            javascript_2()
+            javascript_()
         }
         
         
@@ -175,140 +177,6 @@ for(let i = 0; i < 40; i++){
 }
 
 
-
-
-
-// for(let i = 0; i < 10; i++){
-//     let div2 = document.createElement('div')
-//     const randomico = (minimo, maximo) => Math.random() * (maximo - minimo) + minimo
-//     const tamanho = Math.floor(randomico(7, 150))
-//     const posicao =  Math.floor(randomico(1, 99))
-//     const demora = randomico(5, 0.5)
-
-//     const duracao = randomico(24,13)
-//     const fontSize = (tamanho / 5).toFixed(2)
-    
-//     div2.style.height = `${tamanho}px`
-//     div2.style.width = `${tamanho+20}px`
-//     div2.style.top = `-${tamanho}px`
-   
-//     div2.style.left = `${posicao}%`
-
-//     div2.classList.add('animacao2')
-
-//     div2.innerHTML = 'PHP'
-//     div2.style.lineHeight =  `${tamanho}px`
-//     div2.style.fontSize = `${fontSize}px`
-  
-    
-
-//     div2.style.animationDelay = `${demora}s`
-//     div2.style.animationDuration = `${duracao}s`
-
-//     div2.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
-
-//     animacao.appendChild(div2)
-
-// }
-// for(let i = 0; i < 10; i++){
-//     let div3 = document.createElement('div')
-//     const randomico = (minimo, maximo) => Math.random() * (maximo - minimo) + minimo
-//     const tamanho = Math.floor(randomico(7, 150))
-//     const posicao =  Math.floor(randomico(1, 99))
-//     const demora = randomico(5, 0.5)
-
-//     const duracao = randomico(24,13)
-//     const fontSize = (tamanho / 5).toFixed(2)
-
-//     div3.style.height = `${tamanho}px`
-//     div3.style.width = `${tamanho+20}px`
-//     div3.style.top = `-${tamanho}px`
-    
-    
-//     div3.style.left = `${posicao}%`
-
-//     div3.classList.add('animacao3')
-
-//     div3.innerHTML = 'HTML'
-//     div3.style.lineHeight =  `${tamanho}px`
-//     div3.style.fontSize = `${fontSize}px`
-    
-    
-
-//     div3.style.animationDelay = `${demora}s`
-//     div3.style.animationDuration = `${duracao}s`
-
-//     div3.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
-
-//     animacao.appendChild(div3)
-
-// }    
-// for(let i = 0; i < 10; i++){
-//     let div1 = document.createElement('div')
-//     let div2 = document.createElement('div')
-//     let div3 = document.createElement('div')
-//     let div4 = document.createElement('div')
-
-//     const randomico = (minimo, maximo) => Math.random() * (maximo - minimo) + minimo
-//     const tamanho = Math.floor(randomico(7, 150))
-//     const posicao =  Math.floor(randomico(1, 99))
-//     const demora = randomico(5, 0.5)
-
-//     const duracao = randomico(24,13)
-//     const fontSize = (tamanho / 5).toFixed(2)
-    
-//     div4.style.height = `${tamanho}px`
-//     div4.style.width = `${tamanho+20}px`
-//     div4.style.top = `-${tamanho}px`
-   
-//     div4.style.left = `${posicao}%`
-//     div4.classList.add('animacao4')
-
-//     div4.innerHTML = 'CSS'
-//     div4.style.lineHeight =  `${tamanho}px`
-//     div4.style.fontSize = `${fontSize}px`
-   
-//     div4.addEventListener('click', (e)=>{
-//        const divContent = document.querySelector('.div-content')
-
-//        divContent.style.display = 'none'
-//        div4.style.transition = '3s all'        
-//        div4.style.animationPlayState = 'paused'
-//        div4.style.width = '80vw'
-//        div4.style.height = '80vh' 
-//        div4.style.animation = 'divReta'
-//        div4.style.top = '10%'
-//        div4.style.left = '10%'
-//        div4.style.borderRadius = '10%'
-//        div4.style.zIndex = '100'
-//        
-//     })
-
-//     div4.style.animationDelay = `${demora}s`
-//     div4.style.animationDuration = `${duracao}s`
-
-//     div4.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`
-
-    
-//     animacao.appendChild(div4)
-
-// }    
-
-
-
-
-// function typeWriter(elemento1, elemento2) {
-//     const textoArray = elemento1.innerHTML.split('')
-//     elemento1.innerHTML = ''
-//     setTimeout( ()=>{
-//         textoArray.forEach( (letra, i)=>{
-//             setTimeout( ()=>{
-//                 elemento1.innerHTML += letra
-//             }, 100 * i)
-            
-//         } )
-//     }, 6000)      
-// }
 
 let sliders = document.querySelectorAll('.banner--area-slide').length
 let slider = document.querySelector('.banner--area-slide').clientWidth
@@ -356,7 +224,7 @@ function updateSlider(){
 }
 
 
- setInterval(() => {
+setInterval(() => {
     avancar()
 }, 5000);
 
@@ -373,12 +241,13 @@ const banner = document.querySelector('.banner')
 const contatoForm = document.querySelector('.contato-form')
 const portfolioContent = document.querySelector('.portfolio--content')
 
-const tamanhoTelaAltura = document.querySelector('aside').clientHeight
+// const tamanhoTelaAltura = document.querySelector('aside').clientHeight
+
 
 function responsivo() {
-    if(orcamentos.classList.contains('selecionada')) {
-        orcamentos.classList.remove('selecionada')
-    }
+    // if(orcamentos.classList.contains('selecionada')) {
+    //     orcamentos.classList.remove('selecionada')
+    // }
     if(portfolios.classList.contains('selecionada')) {
         portfolios.classList.remove('selecionada')
     }
@@ -388,13 +257,7 @@ function responsivo() {
     
     responsivos.classList.add('selecionada')
     
-    contatoForm.style.display = 'none'
-    portfolioContent.style.display = 'none'
-    banner.style.display = 'flex'
-
-    header.style.top = '60px'
-    header.style.height = '150px'
-
+   
     
 }
 
@@ -413,13 +276,7 @@ function orcamento() {
     
     orcamentos.classList.add('selecionada')
 
-    banner.style.display = 'none'
-    portfolioContent.style.display = 'none'
-    contatoForm.style.display = 'flex'
-
-    header.style.top = '60px'
-    header.style.height = '150px'
-
+   
     
 }
 
@@ -431,19 +288,13 @@ function contato() {
     if(portfolios.classList.contains('selecionada')) {
         portfolios.classList.remove('selecionada')
     }
-    if(orcamentos.classList.contains('selecionada')) {
-        orcamentos.classList.remove('selecionada')
-    }
+    // if(orcamentos.classList.contains('selecionada')) {
+    //     orcamentos.classList.remove('selecionada')
+    // }
     
     contatos.classList.add('selecionada')
 
-    banner.style.display = 'none'
-    portfolioContent.style.display = 'none'
-    contatoForm.style.display = 'flex'
-
-    header.style.top = '60px'
-    header.style.height = '150px'
-
+    
     
 }
 
@@ -456,32 +307,12 @@ function portfolio() {
     if(contatos.classList.contains('selecionada')) {
         contatos.classList.remove('selecionada')
     }
-    if(orcamentos.classList.contains('selecionada')) {
-        orcamentos.classList.remove('selecionada')
-    }
+    // if(orcamentos.classList.contains('selecionada')) {
+    //     orcamentos.classList.remove('selecionada')
+    // }
     
     portfolios.classList.add('selecionada')
 
-    
-
-    banner.style.display = 'none'
-    contatoForm.style.display = 'none'
-
-    portfolioContent.style.display = 'flex'
-
-    if(tamanhoTelaAltura >= '900') {
-        header.style.top = '60px'
-        header.style.height = '150px'
-
-    } else {
-        header.style.top = '5px'
-        header.style.height = '117px'
-
-        portfolioContent.style.top = '-115px'
-        portfolioContent.style.height = '465px'
-
-    }
-    
     
     
 }
@@ -522,6 +353,8 @@ function css_() {
     conteudoJavascript.style.display = 'none'
     conteudoPhp.style.display = 'none'
     conteudoCss.style.display = 'flex'
+
+    
                              
 }
 function html_() {
@@ -594,3 +427,184 @@ botaoMobile.addEventListener('click', (e)=>{
 
 })
 
+const menuItens = document.querySelectorAll('.menu a[href^="#"]')
+
+menuItens.forEach(item => {
+    item.addEventListener('click', scrollToIdOnClick)
+})
+
+function scrollToIdOnClick(event) {
+    event.preventDefault()
+    const to =  getScrollTopByHref(event.target) + 80
+
+    console.log(to)
+
+    scrollToPosition(to)
+}
+
+function getScrollTopByHref(element) {
+    const id = element.getAttribute('href')
+    return  document.querySelector(id).offsetTop
+}
+
+function scrollToPosition(to) {
+    window.scroll({
+        top: to,
+        behavior: "smooth"
+    })
+}
+
+// function scrollTop() {
+//     let novoBody = document.querySelector('body')
+//     let scroll = novoBody.scrollTop
+
+//     let input = document.querySelector('#name')
+
+//     console.log(novoBody.scrollTop)
+// }
+
+
+
+const footer = document.querySelector('footer')
+const atendimento = document.querySelector('.atendimento')
+
+window.onscroll = ()=> {
+    aparecerWhats();
+    diminuirHeader();
+    bordaBottomAparecerMenu();
+}
+function aparecerWhats() {
+    if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500)  {
+        if(tamanhoTela > 667) {
+            footer.style.display = 'block'
+            atendimento.style.display = 'block'
+        }
+        
+    } else {
+        if(tamanhoTela < 667) {
+            footer.style.display = 'none'
+            atendimento.style.display = 'none'
+        }
+        
+    }
+}
+
+// window.onscroll = ()=> {
+//     diminuirHeader();
+// }
+
+
+const img = document.querySelector('header img')
+const fontMenu = document.querySelectorAll('.menu ul li a')
+// const headerDentroDoHeader = document.querySelector('.header')
+
+
+console.log(tamanhoTela)
+
+
+function diminuirHeader() {
+
+        
+    if(tamanhoTela > 1800 && tamanhoTela < 2000) {
+
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            header.style.padding = '5%'
+            header.style.paddingTop = '5%'
+            header.style.top = '0'
+        } else {
+            header.style.padding = '0'
+            header.style.paddingTop = '0'
+            header.style.top = '5%'
+        }
+       
+    }
+    
+    if(tamanhoTela > 1679 && tamanhoTela < 1799) {
+
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            header.style.padding = '5%'
+            header.style.paddingTop = '6%'
+            header.style.top = '0'
+        } else {
+            header.style.padding = '0'
+            header.style.top = '5%'
+        }
+       
+    }
+    
+    if(tamanhoTela > 1439 && tamanhoTela < 1679) {
+
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            header.style.padding = '5%'
+            header.style.paddingTop = '8%'
+            header.style.top = '0'
+        } else {
+            header.style.padding = '0'
+            header.style.top = '5%'
+        }
+       
+    }
+    if( tamanhoTela > 1370  && tamanhoTela < 1439) {
+        
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            console.log('oi')
+            header.style.padding = '6%'
+            // header.style.paddingTop = '8%'
+            header.style.top = '0'
+            header.style.marginTop = '80px'
+        } else {
+            header.style.padding = '0'
+            header.style.top = '5%'
+            header.style.marginTop = '0px'
+        }
+       
+    }
+    if( tamanhoTela > 667 &&  tamanhoTela < 1369 ) {
+
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            // header.style.position = 'fixed'
+            header.style.top = '0'
+            header.style.padding = '5%'
+            // header.style.height = '100px'
+            // img.style.width = '130px'
+            fontMenu.forEach( (item)=>{
+                item.style.fontSize = '16px'
+            } )
+
+            // responsivos.style.height = '50px'
+            // contatos.style.height = '50px'
+            // portfolios.style.height = '50px'
+
+        } else {
+            header.style.position = 'fixed'
+            header.style.top = '5%'
+            header.style.padding = '0'
+            // header.style.height = '150px'
+            // img.style.width = '200px'
+            fontMenu.forEach( (item)=>{
+                item.style.fontSize = '14px'
+            } )
+
+            responsivos.style.height = '65px'
+            contatos.style.height = '65px'
+            portfolios.style.height = '65px'
+        }
+    }
+    
+}    
+
+function bordaBottomAparecerMenu() {
+    console.log(scrollY)
+    if(document.body.scrollTop < 230 || document.documentElement.scrollTop < 230) {
+        
+        responsivo()
+    }
+    if(document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        portfolio()
+    }
+    if(document.body.scrollTop > 930 || document.documentElement.scrollTop > 930) {
+        contato()
+    }
+
+    
+}
