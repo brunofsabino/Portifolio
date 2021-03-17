@@ -488,8 +488,6 @@ function aparecerWhats() {
     if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500 )  {
             if(tamanhoTela < 1001) {
                 atendimento.style.display = 'none'
-            } else{
-                atendimento.style.display = 'block'
             } 
          footer.style.display = 'block'
             
