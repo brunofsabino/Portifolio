@@ -682,7 +682,7 @@ aside .linguagens ul {
     width: inherit;
     height: inherit;
     background-image: url(Starbucks/assets/images/c1.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;  
 }
 .html1--content,
