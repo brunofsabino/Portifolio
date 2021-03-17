@@ -685,6 +685,13 @@ aside .linguagens ul {
     background-size: contain;
     background-position: center;  
 }
+.image--html--2 {
+    width: inherit;
+    height: inherit;
+    background-image: url(AWAX/media/livros.png);
+    background-size: contain;
+    background-position: center;  
+}
 .html1--content,
 .css1--content,
 .javascript--content,
