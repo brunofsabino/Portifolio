@@ -708,6 +708,9 @@ aside .linguagens ul {
 .php--content a {
     font-size: 12px;
 }
+.whats {
+    z-index: 5;
+}
 footer {
     display: none;
     position: fixed;
