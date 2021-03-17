@@ -3,7 +3,7 @@ const animacaoBody = document.querySelector('.animation')
 
 
 const tamanhoTela = document.querySelector('.animation').clientWidth
-
+const tamanhoTelaAltura = window.screen.height
 
 for(let i = 0; i < 80; i++){
     const div = document.createElement('div')
@@ -244,7 +244,7 @@ const portfolioContent = document.querySelector('.portfolio--content')
 // const tamanhoTelaAltura = document.querySelector('aside').clientHeight
 
 
-function responsivo() {
+function home() {
     // if(orcamentos.classList.contains('selecionada')) {
     //     orcamentos.classList.remove('selecionada')
     // }
@@ -257,7 +257,7 @@ function responsivo() {
     
     responsivos.classList.add('selecionada')
     
-   
+    
     
 }
 
@@ -418,16 +418,22 @@ const botaoMobile = document.querySelector('.botao--menu--mobile')
 const menuLateral = document.querySelector('.menu--mobile--lateral')
 
 botaoMobile.addEventListener('click', (e)=>{
-
+    window.scroll(0, 0) 
     menuLateral.style.display = 'block'
     setTimeout(() => {
-        menuLateral.style.right = '0'   
+        menuLateral.style.right = '0'  
+        
     }, 100);
     
 
 })
 
 const menuItens = document.querySelectorAll('.menu a[href^="#"]')
+// const menuItens2 = document.querySelectorAll('.menu--mobile--lateral a')
+
+// menuItens2.forEach(item => {
+//     item.addEventListener('click', scrollToIdOnClick)
+// })
 
 menuItens.forEach(item => {
     item.addEventListener('click', scrollToIdOnClick)
@@ -435,8 +441,14 @@ menuItens.forEach(item => {
 
 function scrollToIdOnClick(event) {
     event.preventDefault()
-    const to =  getScrollTopByHref(event.target) + 80
-
+    console.log(tamanhoTelaAltura)
+    if(tamanhoTelaAltura < 799) {
+         too =  getScrollTopByHref(event.target) - 150
+    } else if (tamanhoTelaAltura > 799) {
+         too =  getScrollTopByHref(event.target) -218
+    }
+    
+    const to = too
     console.log(to)
 
     scrollToPosition(to)
@@ -470,21 +482,24 @@ const atendimento = document.querySelector('.atendimento')
 
 window.onscroll = ()=> {
     aparecerWhats();
-    diminuirHeader();
     bordaBottomAparecerMenu();
 }
 function aparecerWhats() {
-    if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500)  {
-        if(tamanhoTela > 667) {
-            footer.style.display = 'block'
-            atendimento.style.display = 'block'
-        }
+    if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500 )  {
+            if(tamanhoTela < 1001) {
+                atendimento.style.display = 'none'
+            } 
+                footer.style.display = 'block'
+            
+            
+            
+       
         
     } else {
-        if(tamanhoTela < 667) {
+        
             footer.style.display = 'none'
             atendimento.style.display = 'none'
-        }
+        
         
     }
 }
@@ -500,104 +515,19 @@ const fontMenu = document.querySelectorAll('.menu ul li a')
 
 
 console.log(tamanhoTela)
-
-
-function diminuirHeader() {
-
-        
-    if(tamanhoTela > 1800 && tamanhoTela < 2000) {
-
-        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            header.style.padding = '5%'
-            header.style.paddingTop = '5%'
-            header.style.top = '0'
-        } else {
-            header.style.padding = '0'
-            header.style.paddingTop = '0'
-            header.style.top = '5%'
-        }
-       
-    }
-    
-    if(tamanhoTela > 1679 && tamanhoTela < 1799) {
-
-        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            header.style.padding = '5%'
-            header.style.paddingTop = '6%'
-            header.style.top = '0'
-        } else {
-            header.style.padding = '0'
-            header.style.top = '5%'
-        }
-       
-    }
-    
-    if(tamanhoTela > 1439 && tamanhoTela < 1679) {
-
-        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            header.style.padding = '5%'
-            header.style.paddingTop = '8%'
-            header.style.top = '0'
-        } else {
-            header.style.padding = '0'
-            header.style.top = '5%'
-        }
-       
-    }
-    if( tamanhoTela > 1370  && tamanhoTela < 1439) {
-        
-        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            console.log('oi')
-            header.style.padding = '6%'
-            // header.style.paddingTop = '8%'
-            header.style.top = '0'
-            header.style.marginTop = '80px'
-        } else {
-            header.style.padding = '0'
-            header.style.top = '5%'
-            header.style.marginTop = '0px'
-        }
-       
-    }
-    if( tamanhoTela > 667 &&  tamanhoTela < 1369 ) {
-
-        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            // header.style.position = 'fixed'
-            header.style.top = '0'
-            header.style.padding = '5%'
-            // header.style.height = '100px'
-            // img.style.width = '130px'
-            fontMenu.forEach( (item)=>{
-                item.style.fontSize = '16px'
-            } )
-
-            // responsivos.style.height = '50px'
-            // contatos.style.height = '50px'
-            // portfolios.style.height = '50px'
-
-        } else {
-            header.style.position = 'fixed'
-            header.style.top = '5%'
-            header.style.padding = '0'
-            // header.style.height = '150px'
-            // img.style.width = '200px'
-            fontMenu.forEach( (item)=>{
-                item.style.fontSize = '14px'
-            } )
-
-            responsivos.style.height = '65px'
-            contatos.style.height = '65px'
-            portfolios.style.height = '65px'
-        }
-    }
-    
-}    
+console.log(tamanhoTelaAltura)
+if(tamanhoTela < 501 && tamanhoTelaAltura > 600){
+    banner.style.marginTop = '-50%'
+}
+if(tamanhoTela < 376 && tamanhoTelaAltura > 700){
+    banner.style.marginTop = '-95%'
+}
 
 function bordaBottomAparecerMenu() {
     console.log(scrollY)
     if(document.body.scrollTop < 230 || document.documentElement.scrollTop < 230) {
         
-        responsivo()
+        home()
     }
     if(document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         portfolio()
