@@ -1,0 +1,585 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+header {
+    width: 100vw;
+    height: 12vh;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.container {
+    width: 82vw;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: end;
+    align-items:center;
+    height: 12vh;
+}
+h3 {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    font-size: 1.5rem;
+    color: #FFF; 
+    height: 5.5vh;
+}
+.sessao-1 {
+    height: 88vh;
+    width: 100vw;
+    background-image: url(../images/imagem_primeira_pagina.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.sessao-1--right-bottom {
+    height: 88vh;
+    width: 82vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.sessao-1--caixa {
+    width: 35vw;
+    height: 47vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 8px solid #cf233d;
+}
+.caixa--text,
+.caixa--title {
+    width: 100%;
+    height:15vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 0% 8%;
+    text-align: justify;
+    color: #FFF;
+    font-weight: 400;
+}
+.caixa--title h1 {
+    font-size: 27px;
+    font-weight: bold;
+    /* letter-spacing: -1px;
+    line-height: 1.4; */
+    color: #FFF; 
+}
+.caixa--button {
+    height:13vh;
+    padding: 0% 8%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.caixa--button button {
+    padding: 10px 30px;
+    background: transparent;
+    border: 1px solid #cf233d;
+    color: #FFF; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+.sessao-2 {
+    height: 46vh;
+    width: 100vw;
+    background-color: #CF233D;
+}
+.sessao-2--img {
+    width: 25vw;
+    height: 60vh;
+    border: 10px solid #FFF;
+    position: absolute;
+    top: 78vh;
+    background-image: url(../images/duas_mulheres_sentadas_primeira_pagina.jpg);
+    background-position: bottom;
+    background-size: cover;
+}    
+.sessao-2--content--text {
+    width: 100%;
+    margin-left: 27.5vw;
+    color: #FFF;
+}
+.sessao-2--content--text h1 {
+    margin-top: 3%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.sessao-2--content--text p {
+    margin-top: 3%;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Roboto,sans-serif;
+    max-width: 54.7vw;
+    margin-bottom: 3%;
+}
+.sessao-2--content--text button {
+    padding: 10px 30px;
+    background-color: #cf233d;
+    border: 1px solid #FFF;
+    color: #FFF; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+.sessao-3 {
+    height: 100vh;
+    width: 100vw;
+    
+}
+.sessao-3--content {
+    display: grid;
+    grid-template-areas: "image texto" ;
+    padding: 5% 0%;
+}
+.sessao-3--images {
+    grid-area: image;
+    width: 40vw;
+    height: 82vh;
+    display: grid;
+    grid-template-areas: "image01 image02" ;
+}
+.sessao-3--images--01 {
+    grid-area: image01;
+    width: 18vw;
+    height: 82vh;
+    background-image: url(../images/penguinuhh-MmrSaEJZs4s-unsplash.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+.sessao-3--images--02 {
+    grid-area: image02;
+    width: 18vw;
+    height: 82vh;
+    background-image: url(../images/brandon-morales-TD_2WydEC_I-unsplash.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+.sessao-3--text {
+    grid-area: texto;
+    width: 40vw;
+    height: 82vh;
+    padding: 10% 8%;
+}
+.sessao-3--text h2 {
+    font-family: 'Open Sans',sans-serif;
+    color: #cf233d;
+}
+.sessao-3--text p {
+    margin-top: 4%;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Roboto, sans-serif;
+    max-width: 31vw;
+    margin-bottom: 3%;
+    text-align: justify;
+}
+.sessao-3--text button {
+    padding: 10px 30px;
+    background-color: #cf233d;
+    border: 1px solid #FFF;
+    color: #FFF; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 4%;
+}
+.sessao-4 {
+    height: 100vh;
+    width: 100vw;
+    background-color: #EEEEEE;
+    display: flex;
+    align-items: center;
+}
+.sessao-4--content {
+    width: 82vw;
+    height: 80vh;
+    display: flex;
+    justify-content:space-between;
+    font-family: 'Open Sans',sans-serif;
+    
+}
+.sessao-4--area1 {
+    width: 25vw;
+    height: 80vh;
+    border: 1px solid #d9d9d9;
+    background-color: #FFF;
+}
+.sessao-4--area1--image01 {
+    width: 25vw;
+    height: 57vh;
+    background-image: url(../images/mulher_aerobico.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+.sessao-4--description {
+    width: 25vw;
+    height: 22vh;
+    text-align: center;
+   
+}
+.sessao-4--description h4 {
+    height: 6vh;
+    margin-top: 5vh;
+    font-size: 18px;
+}
+.sessao-4--description p {
+    font-size: 15px;
+}
+.sessao-4--area2 {
+    width: 25vw;
+    height: 80vh;
+    background-color:#FFF;
+    border: 1px solid #d9d9d9;
+}
+.sessao-4--area2--image02 {
+    width: 25vw;
+    height: 57vh;
+    background-image: url(../images/mulher_peso.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sessao-4--area3 {
+    width: 25vw;
+    height: 80vh;
+    background-color:#FFF;
+    border: 1px solid #d9d9d9;
+}
+.sessao-4--area3--image03 {
+    width: 25vw;
+    height: 57vh;
+    background-image: url(../images/boxe.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sessao-5 {
+    height: 75vh;
+    width: 100vw;
+    background-image: url(../images/jonathan-borba-lrQPTQs7nQQ-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sessao-5--escuro {
+    height: 75vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    
+    align-items: center;
+}
+.sessao-5 h1  {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    color: #FFF;
+    font-size: 36px;
+    text-align: center;
+}
+.sessao-5--area--button {
+    width: 82vw;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sessao-5--area--button button {
+    padding: 11px 30px;
+    background: transparent;
+    border: 2px solid #cf233d;
+    color: #FFF; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 0%;
+}
+.sessao-6 {
+    height: 130vh;
+    width: 100vw;
+}
+.sessao-6--area1 {
+    height: 30vh;
+    width: 82vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.sessao-6--area1 h2 {
+    color: #cf233d;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: 'Open Sans',sans-serif;
+}
+.sessao-6--area1 p {
+    margin-top: 3%;
+    font-family: Roboto,sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.sessao-6--area2 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.sessao-6--area2--images {
+    height: 80vh;
+    width: 82vw;
+    display: grid;
+    grid-template-areas:
+    "image01 image02 image03"
+    "image01 image04 image05"
+    ;
+    
+}
+.sessao-6--area2--images01 {
+    width: 26.5vw;
+    grid-area: image01;
+    background-image: url(../images/homem_levando_peso.jpg);
+    background-position: bottom;
+    background-size: cover;
+    margin-left: 2%;
+}
+.sessao-6--area2--images02 {
+    width: 26.5vw;
+    height: 39vh;
+    grid-area: image02;
+    background-image: url(../images/mulher_funcional.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 2%;
+}
+.sessao-6--area2--images03 {
+    width: 26.5vw;
+    height: 39vh;
+    grid-area: image03;
+    background-image: url(../images/jonathan-borba-R0y_bEUjiOM-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 2%;
+}
+.sessao-6--area2--images04 {
+    width: 26.5vw;
+    height: 39vh;
+    grid-area: image04;
+    background-image: url(../images/ultima_foto_academia_fundo.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+.sessao-6--area2--images05 {
+    width: 26.5vw;
+    height: 39vh;
+    grid-area: image05;
+    background-image: url(../images/ac913747c0c3ae2c11494791b55fd031.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+.sessao-7 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.sessao-7--content {
+    height: 85vh;
+    width: 82vw;
+    display: flex;
+}
+.sessao-7--area1 {
+    height: 85vh;
+    width: 41vw;
+    padding: 5% 0%;
+}
+.sessao-7--area1 h2 {
+    color: #cf233d;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: 'Open Sans',sans-serif;
+}
+.sessao-7--area1 form {
+    margin-top: 2%;
+}
+.sessao-7--area1 form input {
+    width:38vw;
+    height: 3vh;
+    padding: 20px 14px;
+    margin-bottom: 3%;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.sessao-7--area1 form textarea {
+    width:38vw;
+    height: 23vh;
+    padding: 14px 14px;
+    font-size: 14px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.sessao-7--area1 button {
+    padding: 10px 35px;
+    background-color: #cf233d;
+    border: 1px solid #FFF;
+    color: #FFF; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 4%;
+}
+.sessao-7--area2 {
+    height: 85vh;
+    width: 41vw;
+    background-image: url(../images/mulher_peso_ultima_foto.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sessao-8 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/jonathan-borba-lrQPTQs7nQQ-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sessao-8--escuro {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+
+}
+.sessao-8--content01 {
+    height: 30vh;
+    width: 82vw;
+}
+.sessao-8 h1 {
+    font-family: 'Open Sans',sans-serif;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 6%;
+}
+.sessao-8--area--barra {
+    width: 6vw;
+    height: 3px;
+    background-color: #cf233d;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 2%;
+}
+.sessao-8--content02 {
+    width: 82vw;
+    height: 70vh;
+    display: flex;
+}
+.sessao-8--content02--area1 {
+    width: 41vw;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+}
+.sessao-8--area1 {
+    width: 41vw;
+    height: 50vh;
+    margin-bottom: 8%;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    margin-left: -13%;
+}
+.sessao-8--content02--area1--img {
+    width: 10vw;
+    height: 20vh;
+    background-image: url(../images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: -50%;
+    left: 13%;
+    border-radius: 50%;
+}
+.sessao-8--content02--area1--text {
+    width: 40vw;
+    height: 38vh;
+    background-color: #FFF;
+    border-radius: 8px;
+}
+.sessao-8--content02--area1--text p {
+    margin-top: 17%;
+    padding: 0% 13%;
+    text-align: justify;
+    font-size: 15px;
+    font-family: 'Open Sans',sans-serif
+}
+.sessao-8--content02--area1--text h4 {
+    text-align: end;
+    padding: 5% 13%;
+    font-family: 'Open Sans',sans-serif
+}
+.sessao-8--content02--area2 {
+    width: 41vw;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+}
+.sessao-8--content02--area2--img {
+    width: 10vw;
+    height: 20vh;
+    background-image: url(../images/ian-dooley-d1UPkiFd04A-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: -50%;
+    left: 13%;
+    border-radius: 50%;
+}
+.sessao-8--area2 {
+    width: 41vw;
+    height: 50vh;
+    margin-bottom: 8%;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    margin-right: 0%;
+}
+footer {
+    width: 100%;
+    background-color: #1A1A1A;
+    color: #FFF;
+}
+.footer--icons {
+    
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    
+}
+.footer--icons--area {
+    width: 11vw;
+}
+.footer--icons--area img{
+    margin-right: 5%;
+    cursor: pointer;
+}
+.footer--2 {
+    height: 10vh;
+    font-family: 'Open Sans',sans-serif;
+    background-color: #333333;
+    text-align: center;
+    font-size: 14px;
+}
