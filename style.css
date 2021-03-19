@@ -1177,6 +1177,7 @@ footer {
     .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
         width: 53vw;
         height: 140vh;
+	top: 60%;
     }
     .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
         width: 48vw;
