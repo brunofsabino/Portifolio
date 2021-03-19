@@ -25,7 +25,7 @@ function responsivo2() {
 
 function contato2() {
     
-    window.scroll(0, 1498)
+    window.scroll(0, 1149)
     
   
     fecharMenuMobile()
@@ -34,7 +34,7 @@ function contato2() {
 function portfolio2() {
     
 
-    window.scroll(0, 726)
+    window.scroll(0, 565)
     fecharMenuMobile()
 }
 
