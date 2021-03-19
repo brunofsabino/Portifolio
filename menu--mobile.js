@@ -18,7 +18,7 @@ const formFieldset = document.querySelector('.contato-form form fieldset')
 
 function responsivo2() {
    
-    window.scroll(0, 121)
+    window.scroll(0, 26)
     fecharMenuMobile()
 }
 
