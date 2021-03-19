@@ -683,14 +683,24 @@ aside .linguagens ul {
     height: inherit;
     background-image: url(Starbucks/assets/images/c1.jpg);
     background-size: contain;
-    background-position: center;  
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 .image--html--2 {
     width: inherit;
     height: inherit;
     background-image: url(AWAX/media/livros.png);
     background-size: contain;
-    background-position: center;  
+    background-position: center;
+    background-repeat: no-repeat;	
+}
+.image--html--2 {
+    width: inherit;
+    height: inherit;
+    background-image: url(SportClub/assets/images/duas_mulheres_sentadas_primeira_pagina.jpg);
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 .html1--content,
 .css1--content,
