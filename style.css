@@ -1151,6 +1151,9 @@ footer {
     .menu {
         display: none;
     }
+    header {
+        height: 15vh;
+    }	    
     .header .logo {
         width: 45%;
         left: 28%;
