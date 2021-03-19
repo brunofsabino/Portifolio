@@ -981,9 +981,55 @@ footer {
     .banner h1 {
         font-size: 24px;
     }
+    
     .linguagens ul li {
-        font-size: 12px;
+        font-size: 10px;
     }
+    .linguagens--conteudo {
+        height: 62vh;
+        overflow: auto;
+        position: relative;
+    }
+    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
+        position: relative;
+        height: 80vh;
+        top: 10%;
+    }
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+        width: 36vw;
+        height: 30vh;
+        justify-content: space-evenly;
+    }
+    .html1--content, .css1--content, .javascript--content, .php--content {
+        width: 20vw;
+        height: 22vh;
+        margin-left: 0px;
+        margin-top: 5%;
+    }
+    label {
+        font-size: 14px;
+    }
+    .contato-form form fieldset {
+        height: 60vh;
+        flex-direction: column;
+    }
+    
+    .inputs--area1 {
+        width: 45vw;
+    }
+    #email, #name, #celular {
+        width: 45vw;
+        height: 4vh;
+        margin-bottom: 10px;
+    }
+    .message--flua {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    #message {
+        height: 10vh;
+        width: 45vw;
+    }	
 }
 
 @media (max-width: 800px) {
@@ -1037,54 +1083,7 @@ footer {
         left: -65px;
         margin-top: -10px;
     }
-    .linguagens ul li {
-        font-size: 10px;
-    }
-    .linguagens--conteudo {
-        height: 62vh;
-        overflow: auto;
-        position: static;
-    }
-    .linguagens--conteudo--1, .linguagens--conteudo--2, .linguagens--conteudo--3, .linguagens--conteudo--4 {
-        position: static;
-        height: 80vh;
-        padding-top: 70px;
-    }
-    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
-        width: 36vw;
-        height: 30vh;
-        justify-content: space-evenly;
-    }
-    .html1--content, .css1--content, .javascript--content, .php--content {
-        width: 20vw;
-        height: 22vh;
-        margin-left: 0px;
-        margin-top: 5%;
-    }
-    label {
-        font-size: 14px;
-    }
-    .contato-form form fieldset {
-        height: 60vh;
-        flex-direction: column;
-    }
     
-    .inputs--area1 {
-        width: 45vw;
-    }
-    #email, #name, #celular {
-        width: 45vw;
-        height: 4vh;
-        margin-bottom: 10px;
-    }
-    .message--flua {
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-    #message {
-        height: 10vh;
-        width: 45vw;
-    }
 }
 
 @media (max-width: 600px) {
