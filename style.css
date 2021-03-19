@@ -1203,11 +1203,30 @@ footer {
     }
 
     .linguagens ul li {
-        font-size: 8px;
+        font-size: 7px;
+    }
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+        margin-left: -20px;
     }
     
 }
 @media (max-width: 322px) {
+    .linguagens ul li {
+    	font-size: 6px;
+     }
+    .html1--content h5, .css1--content h5, .javascript--content h5, .php--content h5 {
+	font-size: 11px;  
+    }	
+    .conteudo--1--html, .conteudo--1--css, .conteudo--1--javascript, .conteudo--1--php {
+	    margin-left: -10px;
+	}
+    .html1--content p, .css1--content p, .javascript--content p, .php--content p {
+	    font-size: 10px;
+    	    max-width: 70px;
+     }
+    .html1--content a, .css1--content a, .javascript--content a, .php--content a {
+    	    font-size: 10px;
+    }
     .contato-form p {
         margin-top: -10%;
         margin-bottom: 12%;
