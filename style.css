@@ -438,6 +438,7 @@ main {
     top: 255px;
     z-index: 1;
 }
+
 .contato-form form {
     width: 55vw;
     height: 55vh;
@@ -1064,6 +1065,9 @@ footer {
     }
     .image {
         height: 10vh;
+    }
+    .contato-form p { 
+        margin-bottom: 8%;
     }
 }
 
