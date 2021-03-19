@@ -1190,7 +1190,9 @@ footer {
         width: 15vw;
         height: 10vh;
     }
-
+    #email, #name, #celular { 
+	margin-bottom: 1%;
+    }
 }
 
 @media (max-width: 376px) {
