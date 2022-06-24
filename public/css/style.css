@@ -30,7 +30,19 @@ ul, li {
 }
 .header-content a {
     text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 13px;
 }
+.logo {
+    background-image: linear-gradient(to right, #2e10dd, #e142dc);
+    color: #FFF;
+    padding: 10px;
+    /* text-transform: uppercase; */
+    font-weight: 800;
+    border-radius: 15px;
+    box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 20%);
+}
+
 .header-content ul {
     display: flex;
     margin: 15px;
@@ -129,6 +141,7 @@ ul, li {
     background-position: right;
     margin-bottom: -13%;
     margin-right: 10%;
+    border: 10px solid #Fff;
 }
 .area2 {
     background-color: #e5e5e5;
@@ -137,20 +150,25 @@ ul, li {
     flex-direction: column;
 }
 .area2 h1,
-.area3 h1 {
-    font-size: 40px;
+.area3 h1,
+.area4 h1 {
+    font-size: 44px;
     font-weight: 600;
     text-align: center;
     margin: 60px;
 }
-.area2-desc {
+.area2-desc,
+.area3-desc {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
 }
 .area2-desc1,
 .area2-desc2,
-.area2-desc3 {
+.area2-desc3,
+.area3-desc1,
+.area3-desc2,
+.area3-desc3 {
     width: 25%;
     box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 15%);
     display: flex;
@@ -186,8 +204,12 @@ ul, li {
 }
 .area2-desc1 p,
 .area2-desc2 p,
-.area2-desc3 p {
+.area2-desc3 p,
+.area3-desc1 p,
+.area3-desc2 p,
+.area3-desc3 p {
     text-align: center;
+    color: #111;
 }
 .area2-desc2 {
     border-top: 20px solid #2cbecc;
@@ -201,4 +223,91 @@ ul, li {
     flex-direction: column;
     color: #FFF;
     background-image: linear-gradient(to right, #2e10dd, #e142dc);
+}
+.area3-img {
+    width: 80%;
+}
+.area3-img img {
+    width: 100%;
+}
+.area3-desc1,
+.area3-desc2,
+.area3-desc3 {
+    border-top: 20px solid #ea76e6;
+}
+.area3 h3 {
+    color: #e142dc;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.area4 {
+    background-image: url('../images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    border-top: 7px solid #FFF;
+    align-items: center;
+}
+.area4 h1 {
+    margin: 0;
+    padding: 20px;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.5);
+    width: 215px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 70px;
+    border-radius: 20px;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+}
+.area4-desc {
+    background-color: rgba(255,255,255,0.6);
+    /* height: 300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    margin-top: 60px;
+    border-radius: 30px;
+    padding: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+.area4-desc-content1,
+.area4-desc-content2,
+.area4-desc-content3 {
+    width: 43%;
+    background-color: #FFF;
+    height: 310px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    border: 5px solid #FFF;
+}
+.area4-desc-content1 {
+    background-image: url('../images/QuantosExisteBrasil.png');
+    background-position: center;
+    background-size: contain;
+}
+.area4-desc-content2 {
+    background-image: url('../images/QualValorVeiculo.PNG');
+    background-position: top;
+    background-size: cover;
+}
+.area4-desc-content-modal {
+    width: 100vw;
+    height: 100vh;
+    /* position: fixed; */
+    background-color: rgba(35, 81, 112, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }

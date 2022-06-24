@@ -10,3 +10,4 @@ menuHamburger.addEventListener('click', click => {
     menu.classList.toggle('menu-lateral')
     body.classList.toggle('body-menu-lateral')
 })
+
