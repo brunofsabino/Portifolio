@@ -98,8 +98,7 @@ ul, li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 100%; */
-    height: 90vh;
+    position: relative;
 }
 .area1 img {
     object-fit: cover;
@@ -113,6 +112,7 @@ ul, li {
     left: auto;
     right: 0;
     z-index: -1;
+    top: 0;
 }
 .area1-desc {
     width: 47%;
@@ -143,7 +143,8 @@ ul, li {
     margin-right: 10%;
     border: 10px solid #Fff;
 }
-.area2 {
+.area2,
+.area6 {
     background-color: #e5e5e5;
     display: flex;
     justify-content: center;
@@ -151,7 +152,9 @@ ul, li {
 }
 .area2 h1,
 .area3 h1,
-.area4 h1 {
+.area4 h1,
+.area5 h1,
+.area6 h1 {
     font-size: 44px;
     font-weight: 600;
     text-align: center;
@@ -241,7 +244,20 @@ ul, li {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.area4 {
+.area4-desc {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 60px;
+}
+.area4-img {
+    max-width: 30%;
+    box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 15%);
+    padding: 10px;
+}
+.area4-img img {
+    width: 100%;
+}
+.area5 {
     background-image: url('../images/bg.jpg');
     background-position: center;
     background-size: cover;
@@ -250,7 +266,7 @@ ul, li {
     border-top: 7px solid #FFF;
     align-items: center;
 }
-.area4 h1 {
+.area5 h1 {
     margin: 0;
     padding: 20px;
     color: #FFF;
@@ -263,7 +279,7 @@ ul, li {
     /* text-transform: uppercase; */
     letter-spacing: 1px;
 }
-.area4-desc {
+.area5-desc {
     background-color: rgba(255,255,255,0.6);
     /* height: 300px; */
     display: flex;
@@ -276,9 +292,9 @@ ul, li {
     flex-wrap: wrap;
     margin-bottom: 60px;
 }
-.area4-desc-content1,
-.area4-desc-content2,
-.area4-desc-content3 {
+.area5-desc-content1,
+.area5-desc-content2,
+.area5-desc-content3 {
     width: 43%;
     background-color: #FFF;
     height: 310px;
@@ -287,22 +303,19 @@ ul, li {
     margin: 10px;
     border: 5px solid #FFF;
 }
-.area4-desc-content1 {
+.area5-desc-content1 {
     background-image: url('../images/QuantosExisteBrasil.png');
     background-position: center;
     background-size: contain;
 }
-.area4-desc-content2 {
+.area5-desc-content2 {
     background-image: url('../images/QualValorVeiculo.PNG');
     background-position: top;
     background-size: cover;
 }
-.area4-desc-content-modal {
-    width: 100vw;
-    height: 100vh;
-    /* position: fixed; */
-    background-color: rgba(35, 81, 112, 0.5);
-    display: flex;
+.area5-desc-content-modal {
+    background-color: rgba(35, 81, 112, 0.8);
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -310,4 +323,70 @@ ul, li {
     top: 0;
     bottom: 0;
     right: 0;
+    transition: all ease .5s;
+}
+.area5-modal1 {
+    width: 65%;
+    height: 65vh;
+    background-color: #FFF;
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+}
+.area5-modal1-content {
+    display: flex;
+}
+.area5-modal1-content-img {
+    flex: 1;
+    /* background-image: url('../images/QuantosExisteBrasil.png'); */
+    background-position: center;
+    background-size: contain;
+    /* width: 43%; */
+    /* background-color: #FFF; */
+    height: 310px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    border: 5px solid #000;
+    margin-right: 25px;
+    background-repeat: no-repeat;
+}
+.area5-modal1-content-desc {
+    flex: 2;
+}
+.area5-modal1 h2 {
+    margin-top: -60px;
+}
+.area5-modal1 a {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 15%);
+    color: #000;
+}
+.modal-close {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   width: 100%;
+}
+.close {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: red;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.area6-content {
+    width: 70%;
+    height: 500px;
+    background-color: #FFF;
 }
