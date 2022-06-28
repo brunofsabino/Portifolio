@@ -37,10 +37,12 @@ ul, li {
     background-image: linear-gradient(to right, #2e10dd, #e142dc);
     color: #FFF;
     padding: 10px;
-    /* text-transform: uppercase; */
+    text-align: center;
     font-weight: 800;
     border-radius: 15px;
     box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 20%);
+    letter-spacing: 0.5px;
+    line-height: 13px;
 }
 
 .header-content ul {
@@ -144,7 +146,7 @@ ul, li {
     border: 10px solid #Fff;
 }
 .area2,
-.area6 {
+.footer-area {
     background-color: #e5e5e5;
     display: flex;
     justify-content: center;
@@ -153,8 +155,7 @@ ul, li {
 .area2 h1,
 .area3 h1,
 .area4 h1,
-.area5 h1,
-.area6 h1 {
+.area5 h1 {
     font-size: 44px;
     font-weight: 600;
     text-align: center;
@@ -164,7 +165,7 @@ ul, li {
 .area3-desc {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
 .area2-desc1,
 .area2-desc2,
@@ -247,10 +248,10 @@ ul, li {
 .area4-desc {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 60px;
+    padding-bottom: 90px;
 }
 .area4-img {
-    max-width: 30%;
+    max-width: 25%;
     box-shadow: 5px 5px 19px 0 rgb(0 0 0 / 15%);
     padding: 10px;
 }
@@ -263,14 +264,13 @@ ul, li {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    border-top: 7px solid #FFF;
     align-items: center;
 }
 .area5 h1 {
     margin: 0;
     padding: 20px;
-    color: #FFF;
-    background-color: rgba(0,0,0,0.5);
+    color: #000;
+    background-color: #FFF;
     width: 215px;
     text-align: center;
     justify-content: center;
@@ -290,7 +290,7 @@ ul, li {
     border-radius: 30px;
     padding: 60px;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
 .area5-desc-content1,
 .area5-desc-content2,
@@ -385,8 +385,25 @@ ul, li {
     cursor: pointer;
 }
 
-.area6-content {
-    width: 70%;
-    height: 500px;
+footer {
+    background-color: #2F3136;
+    border-top: 5px solid #FFF;
+}
+.footer-area {
+    flex-direction: row;
+    padding: 60px;
+    justify-content: space-evenly;
+    background-color: #2F3136;
+}
+.area-midias {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #FFF;
+    border-radius: 25px;
+    height: 45px;
+    padding: 0px 8px;
+}
+.area-midias img {
+    margin: 5px;
 }
