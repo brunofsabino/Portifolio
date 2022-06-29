@@ -21,8 +21,9 @@ session1.style.padding = `${paddingArea1}px 0px`
 
 menuHamburger.addEventListener('click', click => {
     // menuLateral.classList.toggle('menu-lateral-display')
-    menu.classList.toggle('menu-l')
-    menu.classList.toggle('menu-lateral')
+    menuLateral.classList.toggle('menu-l')
+    // menu.classList.toggle('menu-lateral')
+    // menuLateral.style.display = 'flex'
     body.classList.toggle('body-menu-lateral')
 })
 
