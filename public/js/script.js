@@ -11,6 +11,7 @@ const areaModal = document.querySelector('.area5-modal1')
 const botaoFechar = document.querySelector('.close')
 const titleModal = document.querySelector('.area5-modal1 h2')
 const imgModal = document.querySelector('.area5-modal1-content-img')
+const link = document.getElementById('link')
 
 const session1 = document.querySelector('.area1 ')
 const alturaImg = document.querySelector('.area1 img').clientHeight
@@ -47,6 +48,7 @@ function abrirModal1() {
     imgModal.style.backgroundImage = "url('../images/QuantosExisteBrasil.png')"
     imgModal.style.backgroundColor = '#0E4959'
     imgModal.style.backgroundPosition = 'center'
+    link.href = "/quantos-de-vc-existe"
 }
 function abrirModal2() {
     abrirModal()
