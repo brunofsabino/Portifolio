@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -337,7 +340,7 @@ ul, li {
     transition: all ease .5s;
 }
 .area5-modal1 {
-    width: 65%;
+    width: 80%;
     height: 65vh;
     background-color: #FFF;
     border-radius: 30px;
@@ -350,8 +353,36 @@ ul, li {
 .area5-modal1-content {
     display: flex;
     height: 70%;
+    width: 90%;
     justify-content: center;
     align-items: center;
+}
+.area5-modal1-content pre {
+    width: 85%;
+    font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+    background-color: rgb(247, 247, 249);
+    padding: 20px 20px;
+    border-radius: 5px;
+    border: solid rgb(225, 225, 232) 1px;
+    font-size: 16px;
+}
+.area5-modal1-content pre > .doc-code {
+    border: none;
+}
+.doc-code {
+    font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+    display: inline-block;
+    padding: 1px 3px;
+    background-color: rgb(247, 247, 249);
+    border-radius: 2px;
+    border: solid rgb(225, 225, 232) 1px;
+}
+.area5-modal1-content ul {
+    list-style: circle !important;
+    list-style-type: circle;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: block;
 }
 .area5-modal1-content-img {
     flex: 1;
@@ -370,9 +401,13 @@ ul, li {
 }
 .area5-modal1-content-desc {
     flex: 2;
+    overflow: auto;
+    max-height: 70%;
+    line-height: 24px;
+    font-size: 18px;
 }
 .area5-modal1 h2 {
-    margin-top: -60px;
+    font-size: 30px;
 }
 .area5-modal1 a {
     border: 1px solid;
@@ -422,12 +457,24 @@ footer {
     margin: 5px;
 }
 
+@media (max-width: 1260px) {
+    .area5-modal1-content pre {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 1210px) {
     .area1 img {
         width: 75%;
     }
 }
 @media (max-width: 1145px) {
+    .area5-modal1-content-desc {
+        font-size: 17px;
+    }
+    .area5-modal1-content pre {
+        font-size: 12px;
+    }
     .area1-desc {
         width: 35%;
         padding: 15px;
@@ -458,6 +505,9 @@ footer {
 }
 
 @media (max-width: 970px) {
+    .area5-modal1-content pre {
+        font-size: 11px;
+    }
     .area1-desc {
         width: 40%;
         padding: 15px;
@@ -478,6 +528,10 @@ footer {
 }
 
 @media (max-width: 886px) {
+    .area5-modal1-content pre {
+        font-size: 10px;
+    }
+    
     .area1-desc h1 {
         font-size: 34px;
     }
@@ -495,6 +549,9 @@ footer {
     }
 }
 @media (max-width: 784px) {
+    .area5-modal1-content pre {
+        font-size: 12px;
+    }
     .area1-desc h1 {
         font-size: 32px;
     }
@@ -550,6 +607,26 @@ footer {
     }
 }
 @media (max-width: 565px) {
+    .area5-modal1 {
+        height: 80vh;
+    }
+    .area5-modal1-content {
+        width: 88%;
+        height: 75%;
+    }
+    .area5-modal1-content-desc {
+        font-size: 16px;
+    }
+    .area5-modal1-content pre {
+        font-size: 10px;
+    }
+    .area5-modal1 h2 {
+        font-size: 26px;
+        margin: 0px;
+    }
+    .area5-modal1-content-img {
+        width: 65%;
+    }
     .area1 {
         flex-direction: column;
     }
@@ -605,6 +682,31 @@ footer {
 }
 
 @media (max-width: 425px){
+    .area5-modal1 {
+        justify-content: space-evenly;
+    }
+    .area5-modal1-content {
+        height: 70%;
+    }
+    .area5-modal1 h2 {
+        font-size: 22px;
+    }
+    .area5-modal1-content pre {
+        font-size: 9px;
+        width: 95%;
+        padding: 15px 5px;
+    }
+    .area5-modal1-content-desc {
+        font-size: 14px;
+    }
+    .area5-modal1 {
+        width: 95%;
+        padding: 0;
+    }
+    .modal-close {
+        width: 85%;
+        margin-top: 25px;
+    }
     .header-content a,
     .logo {
         letter-spacing: 0.2px;
