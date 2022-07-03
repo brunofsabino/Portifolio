@@ -56,6 +56,7 @@ function abrirModal2() {
     imgModal.style.backgroundImage = "url('../images/QualValorVeiculo.PNG')"
     imgModal.style.backgroundColor = '#E0D8DE'
     imgModal.style.backgroundPosition = 'bottom'
+    link.href = "/qual-o-valor-do-seu-veiculo"
 }
 
 

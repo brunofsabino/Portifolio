@@ -1,0 +1,383 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: gainsboro;
+}
+.area1-container {
+    height: 70vh;
+}
+
+.area1 {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.area-title {
+    width: 700px;
+    height: 230px;
+    margin-top: 50px;
+    background-color: #19539A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.area-title h1 {
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 900;
+    color: #FFF;
+    margin: 0;
+}
+
+form {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 40px;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #BF211E;
+}
+.select2-container {
+    width: auto !important;
+    margin-top: 15px !important;
+    
+}
+.select2-container--default .select2-selection--single {
+    /* background-color: #19539A !important; */
+    border: 3px solid #000 !important;
+    width: 535px !important;
+    height: 55px !important;
+    border-radius: 40px !important;
+    font-weight: 600;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #000 !important;
+    line-height: 55px !important;
+    text-align: center !important;
+    font-size: 22px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 55px !important;
+    position: absolute !important;
+    top: 1px !important;
+    right: 11px !important;
+    width: 25px !important;
+    
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #000 transparent transparent transparent !important;
+    border-width: 10px 9px 0 9px !important;
+    margin-left: -12px !important;
+    
+}
+
+form a {
+    width: 535px;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #BF211E;
+    color: #FFF;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.area2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(0,0,0,0.2); */
+}
+.area2-resultado {
+    border-radius: 15px;
+    background-color: #FFF;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 18px 8px;
+    border: 8px solid #BF211E;
+}
+.area2-resultado p {
+    font-size:22px;
+    margin: 7px;
+    color: #000;
+    font-weight: 900;
+}
+.area2-resultado-preco {
+    width: 340px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area2-resultado-preco p {
+    font-size:22px;
+    color: #FFF;
+    background-color: #BF211E;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: 900;
+}
+.area2-anuncios {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 45px;
+}
+.area2-anuncios-ml {
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFE501;
+    border-radius: 20px;
+    padding: 20px 0px;
+    border: 5px solid #000;
+    margin: 30px;
+}
+.area2-anuncios-ml-title,
+.area2-anuncios-ic-title {
+    background-color: #FFF;
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+.area2-anuncios-ml-title h2,
+.area2-anuncios-ic-title h2 {
+    font-size: 22px;
+    text-align: center;
+}
+.area2-anuncios-ml-logo,
+.area2-anuncios-ic-logo {
+    width: 145px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.area2-anuncios-ml-logo img{
+    width: 100%;
+}
+.area2-anuncios-ic-logo img {
+    width: 75%;
+}
+.anuncios-area {
+    width: 480px;
+    height:135px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFF;
+    margin-top: 20px;
+    border: 1px solid #000;
+}
+.anuncios-area a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+.anuncios-area-img {
+    width: 135px;
+    height:100px;
+}
+.anuncios-area-img img {
+    width: 100%;
+    height: 100%;
+}
+.anuncios-area-desc {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.anuncios-area-desc h1,
+.anuncios-area-desc h2,
+.anuncios-area-desc h3 {
+    margin: 0;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+}
+.anuncios-area-desc h3 {
+    background-color: #022f40;
+    color: #FFF;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.anuncios-area-desc h2 {
+    font-size: 15px;
+}
+.area2-anuncios-ic {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #19539A;
+    padding: 20px 0px;
+    border-radius: 20px;
+    border: 5px solid #000;
+    margin: 30px;
+}
+
+@media (max-width: 1300px) {
+    .area2-anuncios {
+        flex-direction: column;
+    }
+    .area2-anuncios-ml,
+    .area2-anuncios-ic {
+        margin: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .area-title {
+        width: 90%;
+    }
+    .area-title h1 {
+        font-size: 64px;
+    }
+}
+@media (max-width: 650px) {
+    form {
+        padding: 0;
+        width: 90%;
+    }
+    .select2-container {
+        width: 90% !important;
+    }
+    .select2-container .select2-selection--single {
+        width: 100% !important;
+    }
+    form a {
+        margin-bottom: 25px;
+        width: 90%;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 18px !important;
+    }
+    .area2-resultado {
+        width: 90%;
+        padding: 10px 0px;
+    }
+    .area2-resultado p,
+    .area2-resultado-preco p,
+    .area2-anuncios-ml-title h2, 
+    .area2-anuncios-ic-title h2 {
+        font-size: 20px;
+    }
+    .area2-resultado-preco {
+        width: 60%;
+        margin: 20px;
+    }
+    .area2-anuncios-ml,
+    .area2-anuncios-ic,
+    .anuncios-area {
+        width: 90%;
+    }
+}
+
+@media (max-width: 610px) {
+    .area-title h1 {
+        font-size: 54px;
+    }
+    .area2-resultado p {
+        font-size:18px;
+        text-align: center;
+    }
+    .anuncios-area {
+        width: 65%;
+        height: auto;
+    }
+    .area2-anuncios-ml-title h2, .area2-anuncios-ic-title h2 {
+        font-size: 18px;
+    }
+    .anuncios-area a {
+        flex-direction: column;
+    }
+    .anuncios-area-img {
+        width: 45%;
+        height: 45%;
+        margin: 20px;
+    }
+    .anuncios-area-desc h1, .anuncios-area-desc h2, .anuncios-area-desc h3 {
+        font-size: 20px;
+    }
+    .anuncios-area-desc h2 {
+        font-size: 16px;
+    }
+    .anuncios-area-desc h3 {
+        margin: 15px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 16px !important;
+    }
+    .anuncios-area-desc h1, .anuncios-area-desc h2, .anuncios-area-desc h3 {
+        font-size: 18px;
+    }
+    .anuncios-area-desc {
+        width: 90%;
+    }
+}
+@media (max-width: 550px) {
+    .area-title h1 {
+        font-size: 48px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 14px !important;
+    }
+    .anuncios-area-desc h1, .anuncios-area-desc h2, .anuncios-area-desc h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 375px) {
+    .area-title h1 {
+        font-size: 36px;
+    }
+    .select2-container {
+        width: 98% !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 12px !important;
+    }
+    form a {
+        font-size: 18px;
+    }
+    .area2-anuncios-ml-title h2, .area2-anuncios-ic-title h2 {
+        font-size: 15px;
+    }
+    .anuncios-area {
+        width: 75%;
+    }
+    .anuncios-area-desc h1, .anuncios-area-desc h2, .anuncios-area-desc h3 {
+        font-size: 14px;
+    }
+}
