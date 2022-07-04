@@ -391,12 +391,12 @@ ul, li {
     background-size: contain;
     /* width: 43%; */
     /* background-color: #FFF; */
-    height: 310px;
+    height: 75%;
     border-radius: 20px;
     cursor: pointer;
     margin: 10px;
     border: 5px solid #000;
-    margin-right: 25px;
+    margin-right: 40px;
     background-repeat: no-repeat;
 }
 .area5-modal1-content-desc {
@@ -408,6 +408,7 @@ ul, li {
 }
 .area5-modal1 h2 {
     font-size: 30px;
+    margin: 0;
 }
 .area5-modal1 a {
     border: 1px solid;
