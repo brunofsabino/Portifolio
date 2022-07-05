@@ -15,12 +15,12 @@ const titleModal = document.querySelector('.area5-modal1 h2')
 const imgModal = document.querySelector('.area5-modal1-content-img')
 const link = document.getElementById('link')
 
-const session1 = document.querySelector('.area1 ')
-const alturaImg = document.querySelector('.area1 img').clientHeight
-const alturaTitle = document.querySelector('.area1-desc').clientHeight
-let paddingArea1 =  (alturaImg / 2) - alturaTitle
-console.log(paddingArea1)
-session1.style.padding = `${paddingArea1}px 0px`
+// const session1 = document.querySelector('.area1 ')
+// const alturaImg = document.querySelector('.area1 img').clientHeight
+// const alturaTitle = document.querySelector('.area1-desc').clientHeight
+// let paddingArea1 =  (alturaImg / 2) - alturaTitle
+// console.log(paddingArea1)
+// session1.style.padding = `${paddingArea1}px 0px`
 
 function menuFuncion() {
     menuLateral.classList.toggle('menu-l')
@@ -57,7 +57,7 @@ function abrirModal1() {
     imgModal.style.backgroundColor = '#0E4959'
     imgModal.style.backgroundPosition = 'center'
     pModal.innerHTML = `REST API Quantos de você existe no Brasil.
-        <pre><code>https://brunoferrazsabino.dev/quantos-de-vc-existe</code class="doc-code"></pre>
+        <pre><code>https://brunoferrazsabino.dev/api/quantos-de-vc-existe</code class="doc-code"></pre>
         </br>
         Esta API realiza web-scraping dinamico no site do IBGE. 
         </br></br>
@@ -87,7 +87,7 @@ function abrirModal2() {
     imgModal.style.backgroundColor = '#E0D8DE'
     imgModal.style.backgroundPosition = 'bottom'
     pModal.innerHTML = `REST API Qual é o valor do seu veículo.
-        <pre><code>https://brunoferrazsabino.dev/qual-o-valor-do-seu-veiculo</code class="doc-code"></pre>
+        <pre><code>https://brunoferrazsabino.dev/api/qual-o-valor-do-seu-veiculo</code class="doc-code"></pre>
         </br>
         Esta API realiza web-scraping dinamico nos sites da Tabela Fipe, Google, Mercado Livre e Icarros. </br>
         A API realiza a busca do veiculo no site da tabela fipe com base no tipo de veículo, marca, modelo e ano.

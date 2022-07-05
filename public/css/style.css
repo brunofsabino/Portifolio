@@ -150,9 +150,10 @@ ul, li {
     border-radius: 50%;
     background-size: cover;
     background-position: right;
-    margin-bottom: -13%;
+    margin-bottom: 2%;
     margin-right: 10%;
     border: 10px solid #Fff;
+    margin-top: 20%;
 }
 .area2,
 .footer-area {
@@ -517,7 +518,6 @@ footer {
     .area1-photo {
         width: 275px;
         height: 275px;
-        margin-bottom: -25%;
         margin-right: 9%;
     }
     .menu {
@@ -635,16 +635,15 @@ footer {
         width: 75%;
     } */
     .area1-desc {
-        margin-top: -5%;
+        margin-top: 7%;
         margin-left: 10%;
         width: 55%;
     }
     .area1-photo {
         width: 150px;
         height: 150px;
-        margin-bottom: -20%;
         margin-right: -50%;
-        margin-top: 2%;
+        margin-top: 10%;
     }
     .area5-desc-content1, .area5-desc-content2, .area5-desc-content3 {
         height: 140px;
