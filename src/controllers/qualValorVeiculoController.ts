@@ -641,13 +641,13 @@ export const searchApi = (req: Request, response: Response) => {
         const list = []
         const anunciosML = []
         const anunciosIcarros = []
-        const listIcarros = []
+        const listIcarros: any  = ['']
         const browser = await puppeteer.launch({headless: true});
         const page = await browser.newPage();
         await page.goto(url,{ timeout: 0});
         
         await page.waitForSelector('[data-slug="carro"]')
-        if(dados == 'Consulta de Carros e utilitários pequenos') {
+        if(dados === 'Consulta de Carros e utilitários pequenos') {
             await page.click('[data-label="carro"]')
             await page.waitForSelector('#selectMarcacarro')
             const arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
@@ -668,7 +668,7 @@ export const searchApi = (req: Request, response: Response) => {
                 if(number === -1){
                     response.status(500).json({error: "Dados invalidos - Digite corretamente"})
                     
-                } else {
+                } 
                     let veiculo = modelodoVeiculo[number]
                 
                     await page.waitForSelector('.input')
@@ -681,7 +681,7 @@ export const searchApi = (req: Request, response: Response) => {
                     option3[0] == '' ? option3.shift() : option3
                     const option4 = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
-                }
+                
                 
             }
             if(modeloVeiculo){
@@ -847,12 +847,7 @@ export const searchApi = (req: Request, response: Response) => {
             })
             
             
-        } else {
-            response.status(500).json({error: "Dados invalidos - Digite corretamente"})
-        }
-        
-
-        if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
+        } else if (dados === 'Consulta de Caminhões e Micro-Ônibus') {
             await page.click('[data-label="caminhao"]')
             await page.waitForSelector('#selectMarcacaminhao')
             let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
@@ -1040,11 +1035,7 @@ export const searchApi = (req: Request, response: Response) => {
                 anunciosML : list,
                 anunciosIcarros: listIcarros,
             }
-        )} else {
-            response.status(500).json({error: "Dados invalidos - Digite corretamente"})
-        }
-
-        if(dados == 'Consulta de motos') {
+        )} else if (dados === 'Consulta de motos') {
             await page.click('[data-label="moto"]')
             await page.waitForSelector('#selectMarcamoto')
             let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
@@ -1194,10 +1185,8 @@ export const searchApi = (req: Request, response: Response) => {
                 anunciosIcarros: listIcarros,
             }
         )} else {
-            response.status(500).json({error: "Dados invalidos - Digite corretamente"})
+            response.status(500).json({error: "Dados invalidos"})
         }
-
-        
       })();
     } else {
         response.status(500).json({error: "Dados invalidos"})

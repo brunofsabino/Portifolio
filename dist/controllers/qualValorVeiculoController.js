@@ -571,12 +571,12 @@ const searchApi = (req, response) => {
             const list = [];
             const anunciosML = [];
             const anunciosIcarros = [];
-            const listIcarros = [];
+            const listIcarros = [''];
             const browser = yield puppeteer_1.default.launch({ headless: true });
             const page = yield browser.newPage();
             yield page.goto(url, { timeout: 0 });
             yield page.waitForSelector('[data-slug="carro"]');
-            if (dados == 'Consulta de Carros e utilitários pequenos') {
+            if (dados === 'Consulta de Carros e utilitários pequenos') {
                 yield page.click('[data-label="carro"]');
                 yield page.waitForSelector('#selectMarcacarro');
                 const arrayOption = yield page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML));
@@ -591,18 +591,16 @@ const searchApi = (req, response) => {
                     if (number === -1) {
                         response.status(500).json({ error: "Dados invalidos - Digite corretamente" });
                     }
-                    else {
-                        let veiculo = modelodoVeiculo[number];
-                        yield page.waitForSelector('.input');
-                        yield page.waitForSelector('#selectMarcacarro');
-                        yield page.select('select#selectMarcacarro', veiculo);
-                        let arrayOption3 = yield page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML));
-                        let arrayOption4 = yield page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')));
-                        option3 = [...arrayOption3];
-                        option3[0] == '' ? option3.shift() : option3;
-                        const option4 = [...arrayOption4];
-                        option4[0] == '' ? option4.shift() : option4;
-                    }
+                    let veiculo = modelodoVeiculo[number];
+                    yield page.waitForSelector('.input');
+                    yield page.waitForSelector('#selectMarcacarro');
+                    yield page.select('select#selectMarcacarro', veiculo);
+                    let arrayOption3 = yield page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML));
+                    let arrayOption4 = yield page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')));
+                    option3 = [...arrayOption3];
+                    option3[0] == '' ? option3.shift() : option3;
+                    const option4 = [...arrayOption4];
+                    option4[0] == '' ? option4.shift() : option4;
                 }
                 if (modeloVeiculo) {
                     console.log(modeloVeiculo);
@@ -748,10 +746,7 @@ const searchApi = (req, response) => {
                     anunciosIcarros: listIcarros,
                 });
             }
-            else {
-                response.status(500).json({ error: "Dados invalidos - Digite corretamente" });
-            }
-            if (dados == 'Consulta de Caminhões e Micro-Ônibus') {
+            else if (dados === 'Consulta de Caminhões e Micro-Ônibus') {
                 yield page.click('[data-label="caminhao"]');
                 yield page.waitForSelector('#selectMarcacaminhao');
                 let arrayOption = yield page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML));
@@ -916,10 +911,7 @@ const searchApi = (req, response) => {
                     anunciosIcarros: listIcarros,
                 });
             }
-            else {
-                response.status(500).json({ error: "Dados invalidos - Digite corretamente" });
-            }
-            if (dados == 'Consulta de motos') {
+            else if (dados === 'Consulta de motos') {
                 yield page.click('[data-label="moto"]');
                 yield page.waitForSelector('#selectMarcamoto');
                 let arrayOption = yield page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML));
@@ -1050,7 +1042,7 @@ const searchApi = (req, response) => {
                 });
             }
             else {
-                response.status(500).json({ error: "Dados invalidos - Digite corretamente" });
+                response.status(500).json({ error: "Dados invalidos" });
             }
         }))();
     }
