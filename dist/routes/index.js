@@ -27,10 +27,12 @@ const express_1 = require("express");
 const homeController = __importStar(require("../controllers/homeController"));
 const quantosDeVcExiste = __importStar(require("../controllers/quantosVcExisteController"));
 const qualValorVeiculo = __importStar(require("../controllers/qualValorVeiculoController"));
+const carController = __importStar(require("../controllers/carController"));
 const router = (0, express_1.Router)();
 router.get('/', homeController.home);
 router.get('/quantos-de-vc-existe', quantosDeVcExiste.index);
 router.post('/quantos-de-vc-existe', quantosDeVcExiste.home);
 router.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.home);
-router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos);
+// router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
+router.post('/qual-o-valor-do-seu-veiculo', carController.procuraCar);
 exports.default = router;

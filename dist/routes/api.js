@@ -29,4 +29,5 @@ const qualValorVeiculo = __importStar(require("../controllers/qualValorVeiculoCo
 const routerApi = (0, express_1.Router)();
 routerApi.get('/quantos-de-vc-existe-brasil', quantosDeVcExiste.homeApi);
 routerApi.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchApi);
+// routerApi.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchApi)
 exports.default = routerApi;

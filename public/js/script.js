@@ -15,12 +15,6 @@ const titleModal = document.querySelector('.area5-modal1 h2')
 const imgModal = document.querySelector('.area5-modal1-content-img')
 const link = document.getElementById('link')
 
-// const session1 = document.querySelector('.area1 ')
-// const alturaImg = document.querySelector('.area1 img').clientHeight
-// const alturaTitle = document.querySelector('.area1-desc').clientHeight
-// let paddingArea1 =  (alturaImg / 2) - alturaTitle
-// console.log(paddingArea1)
-// session1.style.padding = `${paddingArea1}px 0px`
 
 function menuFuncion() {
     menuLateral.classList.toggle('menu-l')
@@ -89,10 +83,8 @@ function abrirModal2() {
     pModal.innerHTML = `REST API Qual é o valor do seu veículo.
         <pre><code>https://brunoferrazsabino.dev/api/qual-o-valor-do-seu-veiculo</code class="doc-code"></pre>
         </br>
-        Esta API realiza web-scraping dinamico nos sites da Tabela Fipe, Google, Mercado Livre e Icarros. </br>
-        A API realiza a busca do veiculo no site da tabela fipe com base no tipo de veículo, marca, modelo e ano.
-        Com o resultado, ela acessa o Google e pesquisa pelo modelo do veículo e se caso na pesquisa aparecer o site do Mercado Livre e do Icarros,
-        ela irá retornar 5 anúncios do modelo no Mercado Livre e 3 anúncios do modelo no Icarros.
+        Esta API realiza web-scraping dinamico nos sites da Tabela Fipe.
+        
         </br></br>
         Para obter o retorno é necessário encaminhar no endpoint via URL Encoding os campos <code class="doc-code">select</code>,
         <code class="doc-code">select1</code>, <code class="doc-code">select2</code> e <code class="doc-code">select3</code>
@@ -133,10 +125,7 @@ function abrirModal2() {
                 <li><code class="doc-code">autenficacao</code>: A autenficação da pesquisa realizada no site da Tabela Fipe.</li></br>
                 <li><code class="doc-code">dataConsulta</code>: A data da consulta da pesquisa realizada no site da Tabela Fipe.</li></br>
                 <li><code class="doc-code">precoMedio</code>: O preço médio do veiculo que foi pesquisado no site da Tabela Fipe.</li></br>
-                <li><code class="doc-code">anunciosML</code>: A API irá pesquisar no Google o modelo do veículo e se caso houver o site do Mercado Livre, a API retornará um array de anúncios do site Mercado Livre do veículo pesquido. É um array de objetos com as 
-                seguintes propriedades: <code class="doc-code">title</code>, <code class="doc-code">img</code>, <code class="doc-code">anoEKmVeiculo</code>, <code class="doc-code">precoVeiculow</code> e <code class="doc-code">link</code> </li></br>
-                <li><code class="doc-code">anunciosIcarros</code>: A API irá pesquisar no Google o modelo do veículo e se caso houver o site do Icarros, a API retornará um array de anúncios do site Icarros do veículo pesquido. É um array de objetos com as 
-                seguintes propriedades: <code class="doc-code">title</code>, <code class="doc-code">img</code>, <code class="doc-code">anoEKmVeiculo</code>, <code class="doc-code">precoVeiculow</code> e <code class="doc-code">link</code> </li></br>
+               
             </ul>
 
 

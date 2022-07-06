@@ -7,5 +7,6 @@ const routerApi = Router()
 
 routerApi.get('/quantos-de-vc-existe-brasil', quantosDeVcExiste.homeApi )
 routerApi.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchApi)
+// routerApi.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchApi)
 
 export default routerApi
