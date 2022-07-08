@@ -18,7 +18,7 @@ export const home = (req: Request , res: Response) => {
     let newName = name[0].toUpperCase() + name.substr(1)
     console.log(name)
     ;( async()=> {
-        const browser = await pup.launch() // , slowMo : 950
+        const browser = await pup.launch({headless: false}) // , slowMo : 950
         const searchFor = name
         const page = await browser.newPage()
        
