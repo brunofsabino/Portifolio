@@ -12,7 +12,7 @@ router.post('/quantos-de-vc-existe', quantosDeVcExiste.home)
 
 router.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.home)
 // router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
-router.post('/qual-o-valor-do-seu-veiculo', carController.procuraCar)
+router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
 
 
 export default router

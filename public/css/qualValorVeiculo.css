@@ -262,7 +262,7 @@ form a {
 }
 @media (max-width: 650px) {
     form {
-        padding: 0;
+        padding: 0px 0px 15px 0px;
         width: 90%;
     }
     .select2-container {

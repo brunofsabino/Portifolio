@@ -18,31 +18,19 @@ export const home = (req: Request , res: Response) => {
     let newName = name[0].toUpperCase() + name.substr(1)
     console.log(name)
     ;( async()=> {
-        const browser = await pup.launch({headless: false}) // , slowMo : 950
-        const searchFor = name
+        const browser = await pup.launch() // , slowMo : 950
         const page = await browser.newPage()
-       
-
         await page.goto(url, { timeout: 0})
-        
         await page.waitForSelector('input[ng-model="criteria.nome"]')
-        
-        await page.type('input[ng-model="criteria.nome"]' , searchFor)
+        await page.type('input[ng-model="criteria.nome"]' , name)
         console.log("DIGITEI")
         await page.click('.button-wrapper button')
         console.log("CLIQUEI")
-
         await page.waitForSelector('.item-note.ng-binding')
-
-        
-          
         let dados = await page.evaluate(  () => {
-            
             let nodeList = document.querySelectorAll('.item-note.ng-binding')
-            
             let array = [... nodeList]
             console.log(array[0].innerHTML)
-
             let nomesEstados = {
                 emNomeEstado : false,
                 noNomeEstado : false,
@@ -51,7 +39,6 @@ export const home = (req: Request , res: Response) => {
                 doNomeEstado: false,
                 daNomeEstado: false
             }
-            
             let estado = array[3].innerHTML
             switch (estado) {
                 case 'Alagoas': 
@@ -129,7 +116,6 @@ export const home = (req: Request , res: Response) => {
                     break;
             }
             let pessoas = array[4].innerHTML.replace('.', '')
-            // let pessoas = pessoasString
             let obj =   {
                 qt: array[0].innerHTML,
                 percentual: array[1].innerHTML,
@@ -143,7 +129,7 @@ export const home = (req: Request , res: Response) => {
           });
 
           let obj = dados
-          console.log('Nome:', searchFor)
+          console.log('Nome:', name)
           console.log('Dados:', obj);
 
 

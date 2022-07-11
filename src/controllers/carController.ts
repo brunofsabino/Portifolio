@@ -144,13 +144,13 @@ export const procuraCar = (req: Request, response: Response) => {
                 anoModelo,
                 autenficacao,
                 dataConsulta,
-                precoMedio,
-                anunciosSelects,
-                anuncio1: list[0],
-                anuncio2: list[1],
-                anuncio3: list[2],
-                anuncio4: list[3],
-                anuncio5: list[4]
+                precoMedio
+                // anunciosSelects,
+                // anuncio1: list[0],
+                // anuncio2: list[1],
+                // anuncio3: list[2],
+                // anuncio4: list[3],
+                // anuncio5: list[4]
             })
         }
         })()

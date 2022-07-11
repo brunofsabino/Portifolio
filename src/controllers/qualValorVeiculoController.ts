@@ -8,7 +8,6 @@ export const home = (req: Request, res: Response) => {
 
 export const searchVeiculos = (req: Request, response: Response) => {
     let url = "https://veiculos.fipe.org.br/"
-    let google = "https://www.google.com.br/"
     let option: string[]  = ['']
     let option3: string[]  = ['']
     let option5: string[]  = ['']
@@ -124,92 +123,6 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 dataConsulta = arrayValues[13]
                 precoMedio = arrayValues[15]
 
-                await page.goto(google,{ timeout: 0});
-                await page.waitForSelector('.gLFyf')
-                await page.type('.gLFyf.gsfi', `comprar ${modelo} ${anoModelo}`)
-                await page.keyboard.press('Enter')
-                await page.waitForSelector('.yuRUbf')
-        
-                let links2 =  await page.$$eval('.yuRUbf a', item => item.map((link: any) => { return link.href }))
-                
-                for(const item of links2 ){
-                    let x = 1
-                    if(item.indexOf('lista.mercadolivre.com.br') > -1 ){
-                        if(x === 2) continue
-                        await page.goto(item,{ timeout: 0})
-                        await page.waitForSelector('.ui-search-result__image')
-                        let linksML = await page.$$eval('.ui-search-result__image a', item => item.map((link: any) => { return link.href }))
-                        let i = 1
-                        for (let link of linksML) {
-                            
-                            if(i === 6) continue
-                            await page.goto(link,{ timeout: 0})
-                            let imgML = await page.$$eval('.ui-pdp-gallery__figure__image',  item => item.map((link: any) => { return link.src }))
-                            let titleML = await page.$eval('.ui-pdp-title', (item: any) => item.innerText)
-                            let anoEKmVeiculo = await page.$eval('.ui-pdp-subtitle', (item: any) => item.innerText)
-                            let precoVeiculow = await page.$eval('.andes-money-amount__fraction', (item: any) => item.innerText)
-                            const objML = {
-                                title : titleML,
-                                img: imgML[0],
-                                anoEKmVeiculo,
-                                precoVeiculow,
-                                link
-                            }
-                            list.push(objML)
-                            if(list.length > 0){
-                                anunciosSelects = true
-                            }
-                            
-                            i++
-                        }
-                        
-                        x++
-                    }
-
-                    if(item.indexOf('icarros.com.br/tabela-fipe') > -1 ){
-                        await page.goto(item,{ timeout: 0})
-                        await page.waitForSelector('.col-xs-6.col-md-4').then(()=>{
-
-                        }).catch(e => {
-                            e.continue
-                            })
-                       
-                        let linksIc = await page.$$eval('.col-xs-6.col-md-4 a', item => item.map((link: any) => { return link.href }))
-                        
-                        let i = 1
-                        for (let link of linksIc) {
-                            if(i === 4) continue
-                            await page.goto(link,{ timeout: 0})
-                            let imgIc = await page.$eval('.swiper-slide.swiper-slide-active img',  (item: any)=>  item.src)
-                            let titleIc = await page.$eval('.titulo-sm',  (item: any) =>  item.innerText)
-                            let precoIc = await page.$eval('.preco',  (item: any) =>  item.innerText)
-                            let anoIc = await page.$eval('.listahorizontal .primeiro .destaque',  (item: any) =>  item.innerText)
-                            let kmIcarros = await page.$$eval('.card-informacoes-basicas .card-conteudo .listahorizontal li .destaque',  item =>  item.map((item: any) =>  item.innerText ))
-                            
-                            let kmIc = kmIcarros[1]
-                            const objIC = {
-                                title : titleIc,
-                                img: imgIc,
-                                anoEKmVeiculo: `Ano: ${anoIc}  Km: ${kmIc}`,
-                                precoVeiculow: precoIc ,
-                                link
-                            }
-                            listIcarros.push(objIC)
-                            if(listIcarros.length > 0){
-                                anunciosSelectsIcarros = true
-                            }
-                            
-                            i++
-                        }
-                        
-                       
-                    }
-                    
-                }
-                console.log(list)
-                console.log(listIcarros)
-                console.log(links2)
-
             }
             await browser.close();
             response.render('qualValorVeiculo/home', {
@@ -231,17 +144,7 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 anoModelo,
                 autenficacao,
                 dataConsulta,
-                precoMedio,
-                anunciosSelects,
-                anuncio1: list[0],
-                anuncio2: list[1],
-                anuncio3: list[2],
-                anuncio4: list[3],
-                anuncio5: list[4],
-                anunciosSelectsIcarros,
-                anuncioIcarros1: listIcarros[0],
-                anuncioIcarros2: listIcarros[1],
-                anuncioIcarros3: listIcarros[2],
+                precoMedio
             })
             
             
@@ -324,89 +227,89 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 dataConsulta = arrayValues[13]
                 precoMedio = arrayValues[15]
 
-                await page.goto(google,{ timeout: 0});
-                await page.waitForSelector('.gLFyf')
-                await page.type('.gLFyf.gsfi', `comprar ${modelo} ${anoModelo}`)
-                await page.keyboard.press('Enter')
-                await page.waitForSelector('.yuRUbf')
+                // await page.goto(google,{ timeout: 0});
+                // await page.waitForSelector('.gLFyf')
+                // await page.type('.gLFyf.gsfi', `comprar ${modelo} ${anoModelo}`)
+                // await page.keyboard.press('Enter')
+                // await page.waitForSelector('.yuRUbf')
         
-                let links2 =  await page.$$eval('.yuRUbf a', item => item.map((link: any) => { return link.href }))
+                // let links2 =  await page.$$eval('.yuRUbf a', item => item.map((link: any) => { return link.href }))
                 
-                for(const item of links2 ){
-                    let x = 1
-                    if(item.indexOf('lista.mercadolivre.com.br') > -1 ){
-                        if(x === 2) continue
-                        await page.goto(item,{ timeout: 0})
-                        await page.waitForSelector('.ui-search-result__image')
-                        let linksML = await page.$$eval('.ui-search-result__image a', item => item.map((link: any) => { return link.href }))
-                        let i = 1
-                        for (let link of linksML) {
-                            if(i === 6) continue
-                            await page.goto(link,{ timeout: 0})
-                            let imgML = await page.$$eval('.ui-pdp-gallery__figure__image',  item => item.map((link: any) => { return link.src }))
-                            let titleML = await page.$eval('.ui-pdp-title', (item: any) => item.innerText)
-                            let anoEKmVeiculo = await page.$eval('.ui-pdp-subtitle', (item: any) => item.innerText)
-                            let precoVeiculow = await page.$eval('.andes-money-amount__fraction', (item: any) => item.innerText)
-                            const objML = {
-                                title : titleML,
-                                img: imgML[0],
-                                anoEKmVeiculo,
-                                precoVeiculow,
-                                link
-                            }
-                            list.push(objML)
-                            if(list.length > 0){
-                                anunciosSelects = true
-                            }
-                            i++
-                        }
+                // for(const item of links2 ){
+                //     let x = 1
+                //     if(item.indexOf('lista.mercadolivre.com.br') > -1 ){
+                //         if(x === 2) continue
+                //         await page.goto(item,{ timeout: 0})
+                //         await page.waitForSelector('.ui-search-result__image')
+                //         let linksML = await page.$$eval('.ui-search-result__image a', item => item.map((link: any) => { return link.href }))
+                //         let i = 1
+                //         for (let link of linksML) {
+                //             if(i === 6) continue
+                //             await page.goto(link,{ timeout: 0})
+                //             let imgML = await page.$$eval('.ui-pdp-gallery__figure__image',  item => item.map((link: any) => { return link.src }))
+                //             let titleML = await page.$eval('.ui-pdp-title', (item: any) => item.innerText)
+                //             let anoEKmVeiculo = await page.$eval('.ui-pdp-subtitle', (item: any) => item.innerText)
+                //             let precoVeiculow = await page.$eval('.andes-money-amount__fraction', (item: any) => item.innerText)
+                //             const objML = {
+                //                 title : titleML,
+                //                 img: imgML[0],
+                //                 anoEKmVeiculo,
+                //                 precoVeiculow,
+                //                 link
+                //             }
+                //             list.push(objML)
+                //             if(list.length > 0){
+                //                 anunciosSelects = true
+                //             }
+                //             i++
+                //         }
                         
-                    }
-                    if(item.indexOf('icarros.com.br') > -1 ){
-                        await page.goto(item,{ timeout: 0})
-                        await page.waitForSelector('.col-xs-6.col-md-4').then(()=>{
+                //     }
+                //     if(item.indexOf('icarros.com.br') > -1 ){
+                //         await page.goto(item,{ timeout: 0})
+                //         await page.waitForSelector('.col-xs-6.col-md-4').then(()=>{
 
-                        }).catch(e => {
-                            e.continue
-                        })
+                //         }).catch(e => {
+                //             e.continue
+                //         })
                        
-                        let linksIc = await page.$$eval('.col-xs-6.col-md-4 a', item => item.map((link: any) => { return link.href }))
+                //         let linksIc = await page.$$eval('.col-xs-6.col-md-4 a', item => item.map((link: any) => { return link.href }))
                         
-                        // let linksParaImg = await page.$$eval('.sc-gzOgki.jwzpnh a', item => item.map((link: any) => { return link }))
-                        console.log(linksIc)
-                        let i = 1
-                        for (let link of linksIc) {
-                            if(i === 4) continue
-                            await page.goto(link,{ timeout: 0})
-                            let imgIc = await page.$eval('.swiper-slide.swiper-slide-active img',  (item: any)=>  item.src)
-                            let titleIc = await page.$eval('.titulo-sm',  (item: any) =>  item.innerText)
-                            let precoIc = await page.$eval('.preco',  (item: any) =>  item.innerText)
-                            let anoIc = await page.$eval('.listahorizontal .primeiro .destaque',  (item: any) =>  item.innerText)
-                            let kmIcarros = await page.$$eval('.card-informacoes-basicas .card-conteudo .listahorizontal li .destaque',  item =>  item.map((item: any) =>  item.innerText ))
-                            console.log(kmIcarros)
-                            let kmIc = kmIcarros[1]
-                            const objIC = {
-                                title : titleIc,
-                                img: imgIc,
-                                anoEKmVeiculo: `Ano: ${anoIc}  Km: ${kmIc}`,
-                                precoVeiculow: precoIc ,
-                                link
-                            }
-                            listIcarros.push(objIC)
-                            if(listIcarros.length > 0){
-                                anunciosSelectsIcarros = true
-                            }
+                //         // let linksParaImg = await page.$$eval('.sc-gzOgki.jwzpnh a', item => item.map((link: any) => { return link }))
+                //         console.log(linksIc)
+                //         let i = 1
+                //         for (let link of linksIc) {
+                //             if(i === 4) continue
+                //             await page.goto(link,{ timeout: 0})
+                //             let imgIc = await page.$eval('.swiper-slide.swiper-slide-active img',  (item: any)=>  item.src)
+                //             let titleIc = await page.$eval('.titulo-sm',  (item: any) =>  item.innerText)
+                //             let precoIc = await page.$eval('.preco',  (item: any) =>  item.innerText)
+                //             let anoIc = await page.$eval('.listahorizontal .primeiro .destaque',  (item: any) =>  item.innerText)
+                //             let kmIcarros = await page.$$eval('.card-informacoes-basicas .card-conteudo .listahorizontal li .destaque',  item =>  item.map((item: any) =>  item.innerText ))
+                //             console.log(kmIcarros)
+                //             let kmIc = kmIcarros[1]
+                //             const objIC = {
+                //                 title : titleIc,
+                //                 img: imgIc,
+                //                 anoEKmVeiculo: `Ano: ${anoIc}  Km: ${kmIc}`,
+                //                 precoVeiculow: precoIc ,
+                //                 link
+                //             }
+                //             listIcarros.push(objIC)
+                //             if(listIcarros.length > 0){
+                //                 anunciosSelectsIcarros = true
+                //             }
                             
-                            i++
-                        }
+                //             i++
+                //         }
                         
                        
-                    }
-                }
+                //     }
+                // }
 
-                console.log(list)
-                console.log(listIcarros)
-                console.log(links2)
+                // console.log(list)
+                // console.log(listIcarros)
+                // console.log(links2)
             }
             
 
@@ -430,17 +333,7 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 anoModelo,
                 autenficacao,
                 dataConsulta,
-                precoMedio,
-                anunciosSelects,
-                anuncio1: list[0],
-                anuncio2: list[1],
-                anuncio3: list[2],
-                anuncio4: list[3],
-                anuncio5: list[4],
-                anunciosSelectsIcarros,
-                anuncioIcarros1: listIcarros[0],
-                anuncioIcarros2: listIcarros[1],
-                anuncioIcarros3: listIcarros[2],
+                precoMedio
             }
         )}
 
@@ -522,50 +415,6 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 dataConsulta = arrayValues[13]
                 precoMedio = arrayValues[15]
 
-                await page.goto(google,{ timeout: 0});
-                await page.waitForSelector('.gLFyf')
-                await page.type('.gLFyf.gsfi', `comprar ${modelo} ${anoModelo}`)
-                await page.keyboard.press('Enter')
-                await page.waitForSelector('.yuRUbf')
-        
-                let links2 =  await page.$$eval('.yuRUbf a', item => item.map((link: any) => { return link.href }))
-                
-                for(const item of links2 ){
-                    let x = 1
-                    if(item.indexOf('lista.mercadolivre.com.br') > -1 ){
-                        if(x === 2) continue
-                        await page.goto(item,{ timeout: 0})
-                        await page.waitForSelector('.ui-search-result__image')
-                        let linksML = await page.$$eval('.ui-search-result__image a', item => item.map((link: any) => { return link.href }))
-                        let i = 1
-                        for (let link of linksML) {
-                            if(i === 6) continue
-                            await page.goto(link,{ timeout: 0})
-                            let imgML = await page.$$eval('.ui-pdp-gallery__figure__image',  item => item.map((link: any) => { return link.src }))
-                            let titleML = await page.$eval('.ui-pdp-title', (item: any) => item.innerText)
-                            let anoEKmVeiculo = await page.$eval('.ui-pdp-subtitle', (item: any) => item.innerText)
-                            let precoVeiculow = await page.$eval('.andes-money-amount__fraction', (item: any) => item.innerText)
-                            const objML = {
-                                title : titleML,
-                                img: imgML[0],
-                                anoEKmVeiculo,
-                                precoVeiculow,
-                                link
-                            }
-                            list.push(objML)
-                            if(list.length > 0){
-                                anunciosSelects = true
-                            }
-                            i++
-                        } 
-                    }
-                }
-
-                console.log(list)
-                console.log(listIcarros)
-                console.log(links2)
-                
-
             }
 
             await browser.close();
@@ -588,14 +437,7 @@ export const searchVeiculos = (req: Request, response: Response) => {
                 anoModelo,
                 autenficacao,
                 dataConsulta,
-                precoMedio,
-                anunciosSelects,
-                anuncio1: list[0],
-                anuncio2: list[1],
-                anuncio3: list[2],
-                anuncio4: list[3],
-                anuncio5: list[4],
-                anunciosSelectsIcarros,
+                precoMedio
             }
         )}
         
