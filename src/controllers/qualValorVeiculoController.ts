@@ -21,10 +21,10 @@ export const vehicle = (req: Request, response: Response) => {
             if(dados == 'Consulta de Carros e utilitários pequenos') {
                 await page.click('[data-label="carro"]')
                 await page.waitForSelector('#selectMarcacarro')
-                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2  : any =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option: string[] = [...arrayOption]
+                const option2 : string[]= [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -40,10 +40,10 @@ export const vehicle = (req: Request, response: Response) => {
             if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
                 await page.click('[data-label="caminhao"]')
                 await page.waitForSelector('#selectMarcacaminhao')
-                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption: string[] =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2: any =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option: string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -59,10 +59,10 @@ export const vehicle = (req: Request, response: Response) => {
             if(dados == 'Consulta de motos') {
                 await page.click('[data-label="moto"]')
                 await page.waitForSelector('#selectMarcamoto')
-                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option: string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -100,10 +100,10 @@ export const brand = (req: Request, response: Response) => {
             if(dados == 'Consulta de Carros e utilitários pequenos') {
                 await page.click('[data-label="carro"]')
                 await page.waitForSelector('#selectMarcacarro')
-                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2: any =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -114,11 +114,11 @@ export const brand = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacarro')
                     await page.select('select#selectMarcacarro', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4: string[]  = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     await browser.close();
@@ -136,10 +136,10 @@ export const brand = (req: Request, response: Response) => {
             if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
                 await page.click('[data-label="caminhao"]')
                 await page.waitForSelector('#selectMarcacaminhao')
-                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2: string[]  = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -150,11 +150,11 @@ export const brand = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacaminhao')
                     await page.select('select#selectMarcacaminhao', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3: string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4: string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     await browser.close();
@@ -173,10 +173,10 @@ export const brand = (req: Request, response: Response) => {
             if(dados == 'Consulta de motos') {
                 await page.click('[data-label="moto"]')
                 await page.waitForSelector('#selectMarcamoto')
-                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -187,11 +187,11 @@ export const brand = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcamoto')
                     await page.select('select#selectMarcamoto', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     await browser.close();
@@ -233,10 +233,10 @@ export const model = (req: Request, response: Response) => {
             if(dados == 'Consulta de Carros e utilitários pequenos') {
                 await page.click('[data-label="carro"]')
                 await page.waitForSelector('#selectMarcacarro')
-                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -247,27 +247,27 @@ export const model = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacarro')
                     await page.select('select#selectMarcacarro', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 :any =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3: string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
 
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[] = [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelocarro')
                         await page.select('select#selectAnoModelocarro', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7  : any =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 : string[] = [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         await browser.close();
@@ -289,10 +289,10 @@ export const model = (req: Request, response: Response) => {
             if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
                 await page.click('[data-label="caminhao"]')
                 await page.waitForSelector('#selectMarcacaminhao')
-                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -303,26 +303,26 @@ export const model = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacaminhao')
                     await page.select('select#selectMarcacaminhao', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4  : any =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[] = [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelocaminhao')
                         await page.select('select#selectAnoModelocaminhao', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 : any =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 : string[] = [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         await browser.close();
@@ -344,10 +344,10 @@ export const model = (req: Request, response: Response) => {
             if(dados == 'Consulta de motos') {
                 await page.click('[data-label="moto"]')
                 await page.waitForSelector('#selectMarcamoto')
-                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -358,26 +358,26 @@ export const model = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcamoto')
                     await page.select('select#selectMarcamoto', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[] = [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelomoto')
                         await page.select('select#selectAnoModelomoto', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 : any =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5  : string[]= [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         await browser.close();
@@ -423,10 +423,10 @@ export const year = (req: Request, response: Response) => {
             if(dados == 'Consulta de Carros e utilitários pequenos') {
                 await page.click('[data-label="carro"]')
                 await page.waitForSelector('#selectMarcacarro')
-                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[]= [...arrayOption]
+                const option2  : string[]= [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -437,34 +437,34 @@ export const year = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacarro')
                     await page.select('select#selectMarcacarro', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
 
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[]= [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelocarro')
                         await page.select('select#selectAnoModelocarro', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 : any =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 : string[] = [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         if(anoVeiculo){
-                            let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
-                            let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                            let arrayOption6 : string[] =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 : any =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
                             option5 = [...arrayOption6]
-                            const option6 = [...arrayOption7]
+                            const option6 : string[] = [...arrayOption7]
                             option5[0] == '' ? option5.shift() : option5
                             option6[0] == '' ? option6.shift() : option6
                             let number2 = option5.indexOf(anoVeiculo)
@@ -507,10 +507,10 @@ export const year = (req: Request, response: Response) => {
             if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
                 await page.click('[data-label="caminhao"]')
                 await page.waitForSelector('#selectMarcacaminhao')
-                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2  : any =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -521,33 +521,33 @@ export const year = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcacaminhao')
                     await page.select('select#selectMarcacaminhao', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3  : string[] =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4  : any =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[] = [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelocaminhao')
                         await page.select('select#selectAnoModelocaminhao', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 : any =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 : string[] = [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         if(anoVeiculo){
-                            let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
-                            let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                            let arrayOption6 : string[] =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 : any =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
                             option5 = [...arrayOption6]
-                            const option6 = [...arrayOption7]
+                            const option6 : string[] = [...arrayOption7]
                             option5[0] == '' ? option5.shift() : option5
                             option6[0] == '' ? option6.shift() : option6
                             let number2 = option5.indexOf(anoVeiculo)
@@ -589,10 +589,10 @@ export const year = (req: Request, response: Response) => {
             if(dados == 'Consulta de motos') {
                 await page.click('[data-label="moto"]')
                 await page.waitForSelector('#selectMarcamoto')
-                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
-                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
-                const option = [...arrayOption]
-                const option2 = [...arrayOption2]
+                let arrayOption : string[] =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 : any =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option : string[] = [...arrayOption]
+                const option2 : string[] = [...arrayOption2]
                 option[0] == '' ? option.shift() : option
                 option2[0] == '' ? option2.shift() : option2
                 mostrarBotao = true
@@ -603,33 +603,33 @@ export const year = (req: Request, response: Response) => {
                     await page.waitForSelector('.input')
                     await page.waitForSelector('#selectMarcamoto')
                     await page.select('select#selectMarcamoto', veiculo!)
-                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
-                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
-                    const option3 = [...arrayOption3]
+                    let arrayOption3 : string[] =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 : any =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 : string[] = [...arrayOption3]
                     option3[0] == '' ? option3.shift() : option3
-                    const option4 = [...arrayOption4]
+                    const option4 : string[] = [...arrayOption4]
                     option4[0] == '' ? option4.shift() : option4
                     formSelectModel = true
                     if(modeloVeiculo){
-                        let arrayOption5 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
-                        let option4 = [...arrayOption5]
+                        let arrayOption5 : any =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 : string[] = [...arrayOption5]
                         option4[0] == '' ? option4.shift() : option4
                         let number2 = option3.indexOf(modeloVeiculo)
                         let veiculo2 = option4[number2]
                         await page.waitForSelector('#selectAnoModelomoto')
                         await page.select('select#selectAnoModelomoto', veiculo2!)
                         formSelectAnoCar = true
-                        let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
-                        let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
-                        let option5 = [...arrayOption6]
-                        let option6 = [...arrayOption7]
+                        let arrayOption6 : string[] =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 : any =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 : string[]= [...arrayOption6]
+                        let option6 : string[] = [...arrayOption7]
                         option5[0] == '' ? option5.shift() : option5
                         option6[0] == '' ? option6.shift() : option6
                         if(anoVeiculo){
-                            let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
-                            let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                            let arrayOption6 : string[] =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 : any =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
                             option5 = [...arrayOption6]
-                            const option6 = [...arrayOption7]
+                            const option6 : string[] = [...arrayOption7]
                             option5[0] == '' ? option5.shift() : option5
                             option6[0] == '' ? option6.shift() : option6
             

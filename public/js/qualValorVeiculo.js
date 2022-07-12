@@ -2,7 +2,7 @@ let items = document.querySelectorAll('.form-select-1 option')
 let array = [...items]
 
 function mostraAlerta(){   
-    let form = document.querySelector('.form1');
+    let form = document.querySelector('form');
     form.submit();  
 }
 function mostraAlerta2(){   
