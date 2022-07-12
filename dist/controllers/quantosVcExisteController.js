@@ -8,10 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.homeApi = exports.home = exports.index = void 0;
-// import Puppeteer from 'puppeteer'
-const pup = require('puppeteer');
+const puppeteer_1 = __importDefault(require("puppeteer"));
 const index = (req, res) => {
     res.render('quantosDeVcExiste/page');
 };
@@ -25,12 +27,11 @@ const home = (req, res) => {
     let newName = name[0].toUpperCase() + name.substr(1);
     console.log(name);
     (() => __awaiter(void 0, void 0, void 0, function* () {
-        const browser = yield pup.launch(); // , slowMo : 950
-        const searchFor = name;
+        const browser = yield puppeteer_1.default.launch(); // , slowMo : 950
         const page = yield browser.newPage();
         yield page.goto(url, { timeout: 0 });
         yield page.waitForSelector('input[ng-model="criteria.nome"]');
-        yield page.type('input[ng-model="criteria.nome"]', searchFor);
+        yield page.type('input[ng-model="criteria.nome"]', name);
         console.log("DIGITEI");
         yield page.click('.button-wrapper button');
         console.log("CLIQUEI");
@@ -123,7 +124,6 @@ const home = (req, res) => {
                     break;
             }
             let pessoas = array[4].innerHTML.replace('.', '');
-            // let pessoas = pessoasString
             let obj = {
                 qt: array[0].innerHTML,
                 percentual: array[1].innerHTML,
@@ -135,7 +135,7 @@ const home = (req, res) => {
             return obj;
         });
         let obj = dados;
-        console.log('Nome:', searchFor);
+        console.log('Nome:', name);
         console.log('Dados:', obj);
         yield browser.close();
         res.render('quantosDeVcExiste/home', {
@@ -163,7 +163,7 @@ const homeApi = (req, res) => {
     let newName = name[0].toUpperCase() + name.substr(1);
     console.log(name);
     (() => __awaiter(void 0, void 0, void 0, function* () {
-        const browser = yield pup.launch(); // , slowMo : 950
+        const browser = yield puppeteer_1.default.launch(); // , slowMo : 950
         const searchFor = name;
         const page = yield browser.newPage();
         yield page.goto(url, { timeout: 0 });
