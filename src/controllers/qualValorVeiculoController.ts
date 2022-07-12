@@ -5,7 +5,673 @@ export const home = (req: Request, res: Response) => {
     res.render('qualValorVeiculo/home', {
     })
 }
+export const vehicle = (req: Request, response: Response) => {
+    let url = "https://veiculos.fipe.org.br/"
+    let formSelect = false
+    let mostrarBotao = false
+    let dados = req.body.vehicle
+    console.log(req.body)
+    console.log(dados)
+    if(dados) {
+        ;(async () => {
+            const browser = await puppeteer.launch({headless: true});
+            const page = await browser.newPage();
+            await page.goto(url,{ timeout: 0});
+            await page.waitForSelector('[data-slug="carro"]')
+            if(dados == 'Consulta de Carros e utilitários pequenos') {
+                await page.click('[data-label="carro"]')
+                await page.waitForSelector('#selectMarcacarro')
+                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+            
+                await browser.close();
+                response.render('qualValorVeiculo/vehicle', {
+                    option,
+                    formSelect: true,
+                    mostrarBotao,
+                    carro: true,
+                })
+            }
+            if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
+                await page.click('[data-label="caminhao"]')
+                await page.waitForSelector('#selectMarcacaminhao')
+                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
 
+                await browser.close();
+                response.render('qualValorVeiculo/vehicle', {
+                    option,
+                    formSelect: true,
+                    mostrarBotao,
+                    caminhao: true,
+                })
+            }
+            if(dados == 'Consulta de motos') {
+                await page.click('[data-label="moto"]')
+                await page.waitForSelector('#selectMarcamoto')
+                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+
+                await browser.close();
+                response.render('qualValorVeiculo/vehicle', {
+                    option,
+                    formSelect: true,
+                    mostrarBotao,
+                    moto: true,
+                })
+            }
+        })()
+    }
+}
+export const brand = (req: Request, response: Response) => {
+    let url = "https://veiculos.fipe.org.br/"
+    let formSelect = false
+    let mostrarBotao = false
+    let formSelectModel = false
+    console.log('oi')
+    let dados = req.body.vehicle
+    let marcaVeiculo = req.body.vehicle_brand
+    console.log(marcaVeiculo)
+    console.log(dados)
+    if(dados) {
+        ;(async () => {
+            const list = []
+            const listIcarros = []
+            const browser = await puppeteer.launch({headless: true});
+            const page = await browser.newPage();
+            await page.goto(url,{ timeout: 0});
+            
+            await page.waitForSelector('[data-slug="carro"]')
+            if(dados == 'Consulta de Carros e utilitários pequenos') {
+                await page.click('[data-label="carro"]')
+                await page.waitForSelector('#selectMarcacarro')
+                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+                
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacarro')
+                    await page.select('select#selectMarcacarro', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    await browser.close();
+                    response.render('qualValorVeiculo/vehicle_brand', {
+                        option,
+                        formSelect: true,
+                        option2: option3,
+                        carro: true,
+                        formSelectModel,
+                        mostrarBotao,
+                        marcaVeiculo
+                    })
+                }
+            }
+            if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
+                await page.click('[data-label="caminhao"]')
+                await page.waitForSelector('#selectMarcacaminhao')
+                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacaminhao')
+                    await page.select('select#selectMarcacaminhao', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    await browser.close();
+                    response.render('qualValorVeiculo/vehicle_brand', {
+                        option,
+                        formSelect: true,
+                        option2: option3,
+                        caminhao: true,
+                        formSelectModel,
+                        mostrarBotao,
+                        marcaVeiculo
+                    })
+                    
+                }
+            }
+            if(dados == 'Consulta de motos') {
+                await page.click('[data-label="moto"]')
+                await page.waitForSelector('#selectMarcamoto')
+                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcamoto')
+                    await page.select('select#selectMarcamoto', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    await browser.close();
+                    response.render('qualValorVeiculo/vehicle_brand', {
+                        option,
+                        formSelect: true,
+                        option2: option3,
+                        formSelectModel,
+                        mostrarBotao,
+                        marcaVeiculo,
+                        moto: true
+                    })
+                }
+            }
+        })()
+    }
+}
+export const model = (req: Request, response: Response) => {
+    let url = "https://veiculos.fipe.org.br/"
+    let formSelect = false
+    let mostrarBotao = false
+    let formSelectModel = false
+    let formSelectAnoCar = false
+
+    let dados = req.body.vehicle
+    let marcaVeiculo = req.body.vehicle_brand
+    let modeloVeiculo = req.body.vehicle_model
+
+    console.log(dados)
+    if(dados) {
+        ;(async () => {
+            const list = []
+            const listIcarros = []
+            const browser = await puppeteer.launch({headless: true});
+            const page = await browser.newPage();
+            await page.goto(url,{ timeout: 0});
+            
+            await page.waitForSelector('[data-slug="carro"]')
+            if(dados == 'Consulta de Carros e utilitários pequenos') {
+                await page.click('[data-label="carro"]')
+                await page.waitForSelector('#selectMarcacarro')
+                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+                
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacarro')
+                    await page.select('select#selectMarcacarro', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelocarro')
+                        await page.select('select#selectAnoModelocarro', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        await browser.close();
+                        response.render('qualValorVeiculo/vehicle_model', {
+                            option,
+                            formSelect: true,
+                            option2: option3,
+                            option3: option5,
+                            carro: true,
+                            formSelectModel,
+                            formSelectAnoCar,
+                            mostrarBotao,
+                            marcaVeiculo,
+                            modeloVeiculo
+                        })
+                    }
+                }
+            }
+            if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
+                await page.click('[data-label="caminhao"]')
+                await page.waitForSelector('#selectMarcacaminhao')
+                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacaminhao')
+                    await page.select('select#selectMarcacaminhao', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelocaminhao')
+                        await page.select('select#selectAnoModelocaminhao', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        await browser.close();
+                        response.render('qualValorVeiculo/vehicle_model', {
+                            option,
+                            formSelect: true,
+                            option2: option3,
+                            option3: option5,
+                            formSelectModel,
+                            caminhao: true,
+                            formSelectAnoCar,
+                            mostrarBotao,
+                            marcaVeiculo,
+                            modeloVeiculo
+                        })
+                    }
+                }
+            }
+            if(dados == 'Consulta de motos') {
+                await page.click('[data-label="moto"]')
+                await page.waitForSelector('#selectMarcamoto')
+                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcamoto')
+                    await page.select('select#selectMarcamoto', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelomoto')
+                        await page.select('select#selectAnoModelomoto', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        await browser.close();
+                        response.render('qualValorVeiculo/vehicle_model', {
+                            option,
+                            formSelect: true,
+                            option2: option3,
+                            option3: option5,
+                            formSelectModel,
+                            formSelectAnoCar,
+                            moto: true,
+                            mostrarBotao,
+                            marcaVeiculo,
+                            modeloVeiculo
+                        })
+                    }
+                }
+            }
+        })()
+    }
+}
+export const year = (req: Request, response: Response) => {
+    let url = "https://veiculos.fipe.org.br/"
+    let formSelect = false
+    let mostrarBotao = false
+    let formSelectModel = false
+    let formSelectAnoCar = false
+
+    let dados = req.body.vehicle
+    let marcaVeiculo = req.body.vehicle_brand
+    let modeloVeiculo = req.body.vehicle_model
+    let anoVeiculo = req.body.year_model
+
+    console.log(dados, marcaVeiculo, modeloVeiculo, anoVeiculo)
+    if(dados) {
+        ;(async () => {
+           
+            const browser = await puppeteer.launch({headless: true});
+            const page = await browser.newPage();
+            await page.goto(url,{ timeout: 0});
+            
+            await page.waitForSelector('[data-slug="carro"]')
+            if(dados == 'Consulta de Carros e utilitários pequenos') {
+                await page.click('[data-label="carro"]')
+                await page.waitForSelector('#selectMarcacarro')
+                let arrayOption =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacarro option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+                
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacarro')
+                    await page.select('select#selectMarcacarro', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelocarro')
+                        await page.select('select#selectAnoModelocarro', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        if(anoVeiculo){
+                            let arrayOption6 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 =  await page.$$eval('#selectAnocarro option', item => item.map(opt => opt.getAttribute('value')))
+                            option5 = [...arrayOption6]
+                            const option6 = [...arrayOption7]
+                            option5[0] == '' ? option5.shift() : option5
+                            option6[0] == '' ? option6.shift() : option6
+                            let number2 = option5.indexOf(anoVeiculo)
+                            let veiculo3 = option6[number2]
+                            await page.waitForSelector('#selectAnocarro')
+                            await page.select('select#selectAnocarro', veiculo3!)
+                            await page.click('#buttonPesquisarcarro')
+                            await page.waitForSelector('#resultadoConsultacarroFiltros .last')
+                            let arrayValues: string[] =  await page.$$eval('#resultadoConsultacarroFiltros tbody td p', item => item.map(opt => opt.innerHTML))
+                            let anoModelo1 = arrayValues[9]
+                            let anoModeloArray = anoModelo1.split(' ')[0]
+                            let anoModelo = anoModeloArray
+                            await browser.close();
+                            response.render('qualValorVeiculo/year_model', {
+                                option,
+                                formSelect: true,
+                                option2: option3,
+                                option3: option5,
+                                formSelectModel,
+                                carro: true,
+                                formSelectAnoCar,
+                                mostrarBotao,
+                                marcaVeiculo,
+                                modeloVeiculo,
+                                anoVeiculo,
+                                mesReferencia: arrayValues[1],
+                                codigoFipe: arrayValues[3],
+                                marca: arrayValues[5],
+                                modelo : arrayValues[7],
+                                anoModelo: anoModeloArray,
+                                autenficacao: arrayValues[11],
+                                dataConsulta : arrayValues[13],
+                                precoMedio : arrayValues[15]
+                            })
+                        }
+                        
+                    }
+                }
+            }
+            if(dados == 'Consulta de Caminhões e Micro-Ônibus') {
+                await page.click('[data-label="caminhao"]')
+                await page.waitForSelector('#selectMarcacaminhao')
+                let arrayOption =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcacaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcacaminhao')
+                    await page.select('select#selectMarcacaminhao', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelocaminhao')
+                        await page.select('select#selectAnoModelocaminhao', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        if(anoVeiculo){
+                            let arrayOption6 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 =  await page.$$eval('#selectAnocaminhao option', item => item.map(opt => opt.getAttribute('value')))
+                            option5 = [...arrayOption6]
+                            const option6 = [...arrayOption7]
+                            option5[0] == '' ? option5.shift() : option5
+                            option6[0] == '' ? option6.shift() : option6
+                            let number2 = option5.indexOf(anoVeiculo)
+                            let veiculo3 = option6[number2]
+                            await page.waitForSelector('#selectAnocaminhao')
+                            await page.select('select#selectAnocaminhao', veiculo3!)
+                            await page.click('#buttonPesquisarcaminhao')
+                            await page.waitForSelector('#resultadoConsultacaminhaoFiltros .last')
+                            let arrayValues =  await page.$$eval('#resultadoConsultacaminhaoFiltros tbody td p', item => item.map(opt => opt.innerHTML))
+                            let anoModelo1 = arrayValues[9]
+                            let anoModeloArray = anoModelo1.split(' ')[0]
+                            let anoModelo = anoModeloArray
+                            await browser.close();
+                            response.render('qualValorVeiculo/year_model', {
+                                option,
+                                formSelect: true,
+                                option2: option3,
+                                option3: option5,
+                                caminhao: true,
+                                formSelectModel,
+                                formSelectAnoCar,
+                                mostrarBotao,
+                                marcaVeiculo,
+                                modeloVeiculo,
+                                anoVeiculo,
+                                mesReferencia: arrayValues[1],
+                                codigoFipe: arrayValues[3],
+                                marca: arrayValues[5],
+                                modelo : arrayValues[7],
+                                anoModelo: anoModeloArray,
+                                autenficacao: arrayValues[11],
+                                dataConsulta : arrayValues[13],
+                                precoMedio : arrayValues[15]
+                            })
+                        }
+                    }
+                }
+            }
+            if(dados == 'Consulta de motos') {
+                await page.click('[data-label="moto"]')
+                await page.waitForSelector('#selectMarcamoto')
+                let arrayOption =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.innerHTML))
+                let arrayOption2 =  await page.$$eval('#selectMarcamoto option', item => item.map(opt => opt.getAttribute('value')))
+                const option = [...arrayOption]
+                const option2 = [...arrayOption2]
+                option[0] == '' ? option.shift() : option
+                option2[0] == '' ? option2.shift() : option2
+                mostrarBotao = true
+    
+                if(marcaVeiculo)  {
+                    let number = option.indexOf(marcaVeiculo)
+                    let veiculo = option2[number]
+                    await page.waitForSelector('.input')
+                    await page.waitForSelector('#selectMarcamoto')
+                    await page.select('select#selectMarcamoto', veiculo!)
+                    let arrayOption3 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.innerHTML))
+                    let arrayOption4 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                    const option3 = [...arrayOption3]
+                    option3[0] == '' ? option3.shift() : option3
+                    const option4 = [...arrayOption4]
+                    option4[0] == '' ? option4.shift() : option4
+                    formSelectModel = true
+                    if(modeloVeiculo){
+                        let arrayOption5 =  await page.$$eval('#selectAnoModelomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option4 = [...arrayOption5]
+                        option4[0] == '' ? option4.shift() : option4
+                        let number2 = option3.indexOf(modeloVeiculo)
+                        let veiculo2 = option4[number2]
+                        await page.waitForSelector('#selectAnoModelomoto')
+                        await page.select('select#selectAnoModelomoto', veiculo2!)
+                        formSelectAnoCar = true
+                        let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                        let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                        let option5 = [...arrayOption6]
+                        let option6 = [...arrayOption7]
+                        option5[0] == '' ? option5.shift() : option5
+                        option6[0] == '' ? option6.shift() : option6
+                        if(anoVeiculo){
+                            let arrayOption6 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.innerHTML))
+                            let arrayOption7 =  await page.$$eval('#selectAnomoto option', item => item.map(opt => opt.getAttribute('value')))
+                            option5 = [...arrayOption6]
+                            const option6 = [...arrayOption7]
+                            option5[0] == '' ? option5.shift() : option5
+                            option6[0] == '' ? option6.shift() : option6
+            
+                            let number2 = option5.indexOf(anoVeiculo)
+                            let veiculo3 = option6[number2]
+                            await page.waitForSelector('#selectAnomoto')
+                            await page.select('select#selectAnomoto', veiculo3!)
+                            await page.click('#buttonPesquisarmoto')
+                            await page.waitForSelector('#resultadoConsultamotoFiltros .last')
+                            let arrayValues =  await page.$$eval('#resultadoConsultamotoFiltros tbody td p', item => item.map(opt => opt.innerHTML))
+                            let anoModelo1 = arrayValues[9]
+                            let anoModeloArray = anoModelo1.split(' ')[0]
+                            let anoModelo = anoModeloArray
+                            await browser.close();
+                            response.render('qualValorVeiculo/year_model', {
+                                option,
+                                formSelect: true,
+                                option2: option3,
+                                option3: option5,
+                                moto: true,
+                                formSelectModel,
+                                formSelectAnoCar,
+                                mostrarBotao,
+                                marcaVeiculo,
+                                modeloVeiculo,
+                                anoVeiculo,
+                                mesReferencia: arrayValues[1],
+                                codigoFipe: arrayValues[3],
+                                marca: arrayValues[5],
+                                modelo : arrayValues[7],
+                                anoModelo: anoModeloArray,
+                                autenficacao: arrayValues[11],
+                                dataConsulta : arrayValues[13],
+                                precoMedio : arrayValues[15]
+                            })
+                        }
+                    }
+                }
+            }
+        })()
+    }
+}
 export const searchVeiculos = (req: Request, response: Response) => {
     let url = "https://veiculos.fipe.org.br/"
     let option: string[]  = ['']

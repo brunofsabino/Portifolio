@@ -79,7 +79,7 @@ form {
     
 }
 
-form a {
+.area-form a {
     width: 535px;
     height: 65px;
     border-radius: 10px;
@@ -271,7 +271,7 @@ form a {
     .select2-container .select2-selection--single {
         width: 100% !important;
     }
-    form a {
+    .area-form a {
         margin-bottom: 25px;
         width: 90%;
     }
@@ -367,7 +367,7 @@ form a {
     .select2-container--default .select2-selection--single .select2-selection__rendered {
         font-size: 12px !important;
     }
-    form a {
+    .area-form a {
         font-size: 18px;
     }
     .area2-anuncios-ml-title h2, .area2-anuncios-ic-title h2 {

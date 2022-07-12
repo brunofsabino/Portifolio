@@ -1,14 +1,21 @@
 let items = document.querySelectorAll('.form-select-1 option')
 let array = [...items]
 
-function mostraAlerta(elemento){   
-    
-    let form = document.querySelector('form');
-    form.submit();
-    
-    let selectOptions = document.querySelectorAll('.form-select-1 option')
-   
-    
+function mostraAlerta(){   
+    let form = document.querySelector('.form1');
+    form.submit();  
+}
+function mostraAlerta2(){   
+    let form = document.querySelector('.form2');
+    form.submit();  
+}
+function mostraAlerta3(){   
+    let form = document.querySelector('.form3');
+    form.submit();  
+}
+function mostraAlerta4(){   
+    let form = document.querySelector('.form4');
+    form.submit();  
 }
 
 array.forEach( (item, indice) => {

@@ -12,7 +12,11 @@ router.post('/quantos-de-vc-existe', quantosDeVcExiste.home)
 
 router.get('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.home)
 // router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
-router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
+router.post('/qual-o-valor-do-seu-veiculo/veiculo', qualValorVeiculo.vehicle)
+router.post('/qual-o-valor-do-seu-veiculo/veiculo/marca', qualValorVeiculo.brand)
+router.post('/qual-o-valor-do-seu-veiculo/veiculo/marca/modelo', qualValorVeiculo.model)
+router.post('/qual-o-valor-do-seu-veiculo/veiculo/marca/modelo/ano', qualValorVeiculo.year)
+// router.post('/qual-o-valor-do-seu-veiculo', qualValorVeiculo.searchVeiculos)
 
 
 export default router
