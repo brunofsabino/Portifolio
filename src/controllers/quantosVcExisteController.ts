@@ -5,7 +5,7 @@ export const index = (req: Request, res: Response) => {
     res.render('quantosDeVcExiste/page')
 }
 export const home = (req: Request , res: Response) => {
-    let url = "https://censo2010.ibge.gov.br/nomes/#/search"
+    let url = "https://censo2010.ibge.gov.br/nomes/"
     let { name } = req.body
     if(name.length <= 2 || name == '' ) {
         return res.redirect('/quantos-de-vc-existe')
@@ -150,31 +150,20 @@ export const homeApi = (req: Request , res: Response) => {
     let newName = name[0].toUpperCase() + name.substr(1)
     console.log(name)
     ;( async()=> {
-        const browser = await puppeteer.launch() // , slowMo : 950
+        const browser = await puppeteer.launch({headless: false}) // , slowMo : 950
         const searchFor = name
         const page = await browser.newPage()
-       
-
         await page.goto(url, { timeout: 0})
-        
         await page.waitForSelector('input[ng-model="criteria.nome"]')
-        
         await page.type('input[ng-model="criteria.nome"]' , searchFor)
         console.log("DIGITEI")
         await page.click('.button-wrapper button')
         console.log("CLIQUEI")
-
         await page.waitForSelector('.item-note.ng-binding')
-
-        
-          
         let dados = await page.evaluate(  () => {
-            
             let nodeList = document.querySelectorAll('.item-note.ng-binding')
-            
             let array = [... nodeList]
             console.log(array[0].innerHTML)
-
             let nomesEstados = {
                 emNomeEstado : false,
                 noNomeEstado : false,
@@ -183,7 +172,6 @@ export const homeApi = (req: Request , res: Response) => {
                 doNomeEstado: false,
                 daNomeEstado: false
             }
-            
             let estado = array[3].innerHTML
             switch (estado) {
                 case 'Alagoas': 
@@ -222,7 +210,6 @@ export const homeApi = (req: Request , res: Response) => {
                 default:
                     break;
             }
-
             switch (estado) {
                 case 'Alagoas': 
                 case 'São Paulo': 
@@ -261,7 +248,6 @@ export const homeApi = (req: Request , res: Response) => {
                     break;
             }
             let pessoas = array[4].innerHTML.replace('.', '')
-            // let pessoas = pessoasString
             let obj =   {
                 qt: array[0].innerHTML,
                 percentual: array[1].innerHTML,
@@ -271,25 +257,18 @@ export const homeApi = (req: Request , res: Response) => {
                 nomesEstados
             }
             return obj
-              
-          });
-
-          let obj = dados
-          console.log('Nome:', searchFor)
-          console.log('Dados:', obj);
-
-
-        await browser.close()
-
-        res.status(200).json({
-            name: newName,
-            numberNamesBrasil: obj.qt,
-            namePopular: obj.popularidade,
-            statePopularName: obj.estadoComMais,
-            name100ThousandState: obj.aCada100MilNoEstado,
-            percentage: obj.percentual
-        })
+            });
+            let obj = dados
+            console.log('Nome:', searchFor)
+            console.log('Dados:', obj);
+            await browser.close()
+            res.status(200).json({
+                name: newName,
+                numberNamesBrasil: obj.qt,
+                namePopular: obj.popularidade,
+                statePopularName: obj.estadoComMais,
+                name100ThousandState: obj.aCada100MilNoEstado,
+                percentage: obj.percentual
+            })
     })()
-
-    
 }
