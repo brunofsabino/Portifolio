@@ -1,24 +1,19 @@
 import { Response, Request } from 'express'
-// import Puppeteer from 'puppeteer'
-
-const pup = require('puppeteer')
+import puppeteer from 'puppeteer'
 
 export const index = (req: Request, res: Response) => {
-
     res.render('quantosDeVcExiste/page')
 }
-
 export const home = (req: Request , res: Response) => {
     let url = "https://censo2010.ibge.gov.br/nomes/#/search"
     let { name } = req.body
-    
     if(name.length <= 2 || name == '' ) {
         return res.redirect('/quantos-de-vc-existe')
     }
     let newName = name[0].toUpperCase() + name.substr(1)
     console.log(name)
     ;( async()=> {
-        const browser = await pup.launch() // , slowMo : 950
+        const browser = await puppeteer.launch() // , slowMo : 950
         const page = await browser.newPage()
         await page.goto(url, { timeout: 0})
         await page.waitForSelector('input[ng-model="criteria.nome"]')
@@ -125,28 +120,21 @@ export const home = (req: Request , res: Response) => {
                 nomesEstados
             }
             return obj
-              
           });
-
           let obj = dados
           console.log('Nome:', name)
           console.log('Dados:', obj);
-
-
-        await browser.close()
-
-        res.render('quantosDeVcExiste/home', {
-            name: newName,
-            quantidade: obj.qt,
-            popularidade: obj.popularidade,
-            estado: obj.estadoComMais,
-            aCada100MilNoEstado: obj.aCada100MilNoEstado,
-            percentage: obj.percentual,
-            nomesEstados: obj.nomesEstados
-        })
+            await browser.close()
+            res.render('quantosDeVcExiste/home', {
+                name: newName,
+                quantidade: obj.qt,
+                popularidade: obj.popularidade,
+                estado: obj.estadoComMais,
+                aCada100MilNoEstado: obj.aCada100MilNoEstado,
+                percentage: obj.percentual,
+                nomesEstados: obj.nomesEstados
+            })
     })()
-
-    
 }
 
 export const homeApi = (req: Request , res: Response) => {
@@ -162,7 +150,7 @@ export const homeApi = (req: Request , res: Response) => {
     let newName = name[0].toUpperCase() + name.substr(1)
     console.log(name)
     ;( async()=> {
-        const browser = await pup.launch() // , slowMo : 950
+        const browser = await puppeteer.launch() // , slowMo : 950
         const searchFor = name
         const page = await browser.newPage()
        
