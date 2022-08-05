@@ -1,0 +1,14 @@
+.movies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.img {
+    width:200px;
+    height: 300px;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 150px;
+}
