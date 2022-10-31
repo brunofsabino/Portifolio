@@ -33,10 +33,6 @@ body {
     color: #FFF;
     margin: 0;
 }
-/* .area-form {
-    width: 97%;
-} */
-
 form {
     margin-top: 30px;
     padding: 0px 30px 15px;
@@ -82,7 +78,7 @@ form {
     
 }
 
-.area-form a {
+.area1 form a {
     width: 535px;
     height: 65px;
     border-radius: 10px;
